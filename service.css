@@ -200,10 +200,11 @@
     font-size: var(--fs-lg);
     font-weight: 600;
 }
-.payment-detail .main-price{
+.payment-detail #main-price{
     margin: 0 0 15px 0;
     font-size: var(--fs-lg);
     font-weight: 600;
+    color: #000;
     width: 50%;
     background: var(--bg-color);
     padding: 10px;

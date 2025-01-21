@@ -8,7 +8,7 @@ payments.addEventListener("change", (e) => {
   }
 });
 const frequency = document.querySelector(".service-frequency select");
-const price = document.querySelector(".main-price");
+const price = document.getElementById("main-price");
 const quantitySelect = document.getElementById("workers-numbers");
 const defaultWorker = document.getElementById("default");
 const defaultLabel = document.getElementById("default-label");
@@ -103,7 +103,7 @@ const calculatePrice = () => {
   }
 
   // Display the total price
-  price.textContent = `$${total}`;
+  price.value = `$${total}`;
 };
 
 // Attach event listeners
