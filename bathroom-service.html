@@ -94,7 +94,7 @@
               </div>
             </div>
             <div class="service-home-text">
-              <form action="">
+              <form action="./service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
                   Purchase Service :
                 </h2>
@@ -205,9 +205,9 @@
                       <input
                         type="text"
                         value="Bathroom Cleaning"
-                        name=""
+                        name="service"
                         id=""
-                        disabled
+                        
                         required
                         data-aos="fade-up"
                         data-aos-duration="1000"
@@ -294,9 +294,9 @@
                       data-aos-duration="1000"
                       data-aos-delay="400"
                     >
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="combine">Combines(Male and Female)</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Combines(Male&Female)">Combines(Male and Female)</option>
                     </select>
 
                     <div class="worker-count">
@@ -408,7 +408,7 @@
                       name="prices"
                       id="main-price"
                       value="$360"
-                      disabled
+                      
                       data-aos="fade-up"
                       data-aos-duration="1000"
                       data-aos-delay="500"
@@ -501,7 +501,7 @@
                   </p> </label
                 ><br />
 
-                <input type="submit" value="Buy now" class="btn buy" />
+                <input type="submit" name="submit" value="Buy now" class="btn buy" />
               </form>
             </div>
           </div>
