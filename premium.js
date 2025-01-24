@@ -109,3 +109,58 @@ const calculatePrice = () => {
 // Attach event listeners
 frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
+
+
+
+// get service from checkbox
+
+// function updateValue(){
+//   var checkbox1 = document.getElementById("checkbox1");
+//   var checkbox2 = document.getElementById("checkbox2");
+//   var checkbox3 = document.getElementById("checkbox3");
+//   var checkbox4 = document.getElementById("checkbox4");
+//   var checkbox5 = document.getElementById("checkbox5");
+//   var checkbox6 = document.getElementById("checkbox6");
+//   var checkbox7 = document.getElementById("checkbox7");
+//   var checkbox8 = document.getElementById("checkbox8");
+//   var checkbox9 = document.getElementById("checkbox9");
+//   var checkbox10 =ducument.getElementById("checkbox10");
+//   var textbox = document.getElementById("myTextbox");
+
+//   var selectedOptions =[];
+
+//   if(checkbox1.checked){
+//       selectedOptions.push("Furniture Cleaning");
+//   }
+//   if(checkbox2.checked){
+//       selectedOptions.push("Kitchen Cleaning");
+//   }
+//   if(checkbox3.checked){
+//       selectedOptions.push("Car Cleaning");
+//   }
+//   if(checkbox4.checked){
+//     selectedOptions.push("Bathroom Cleaning");
+//   }
+//   if(checkbox5.checked){
+//     selectedOptions.push("Window Cleaning");
+//   }
+//   if(checkbox6.checked){
+//     selectedOptions.push("Carpet Cleaning");
+//   }
+//   if(checkbox7.checked){
+//     selectedOptions.push("Office Cleaning");
+//   }
+//   if(checkbox8.checked){
+//     selectedOptions.push("Medical Cleaning");
+//   }
+//   if(checkbox9.checked){
+//     selectedOptions.push("Resturant Cleaning");
+//   }
+//   if(checkbox10.checked){
+//    selectedOptions.push("Event Cleaning");
+//   }
+//   textbox.value = selectedOptions.join(",  ");
+// }
+
+
+
