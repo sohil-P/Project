@@ -1,7 +1,7 @@
 <?php
 
 include('./config.php');
-if(isset($_POST['Book'])){
+if(isset($_POST['submit'])){
    
     $BSName=$_POST['service'];
     $Frequency=$_POST['frequency'];

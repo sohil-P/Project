@@ -1,6 +1,6 @@
 <?php
 include("./config.php");
-if(isset($_POST['premium'])){
+if(isset($_POST['submit'])){
     $PSName= $_POST['service'];
     $Frequency=$_POST['frequency'];
     $Date = $_POST['cleaning_date'];

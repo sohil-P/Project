@@ -1,6 +1,7 @@
 <?php
 include('./config.php');
-if(isset($_POST['Book'])){
+include('./booking.php');
+if(isset($_POST['submit'])){
     
     $SSName=$_POST['service'];
     $Frequency=$_POST['frequency'];
