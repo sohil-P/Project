@@ -1,6 +1,7 @@
 <?php
 
 include('./config.php');
+include('./booking.php');
 if(isset($_POST['submit'])){
    
     $BSName=$_POST['service'];
