@@ -48,12 +48,34 @@
       <!------ home of about  ------->
 
       <section class="ab-home" id="ab-home">
-        <div class="video-background">
+        <!-- <div class="video-background">
           <div class="video-overlay"></div>
           <video autoplay muted loop>
-            <source src="video/cleaning-video1.mp4" type="video/mp4" />
+            <source src="video/cleaning-video2.mp4" type="video/mp4" />
           </video>
-        </div>
+        </div> -->
+        <div class="container">
+          <div class="home-text">
+            <h1 data-aos="fade-up" data-aos-duration="1000">
+              BrightWave Cleaning is a professional cleaning company that
+              provides top-quality cleaning services for homes and businesses
+              in the Greater Toronto Area.
+            </h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+              Our team of experienced, reliable cleaners is committed to
+              delivering exceptional results, using eco-friendly products and
+              advanced cleaning techniques to ensure your space is spotless,
+              healthy, and inviting.
+            </p>
+            <button
+              onclick="redirectToPage()"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
+              Book a Visit Now
+            </button>
+          </div>
+        
       </section>
 
       <!----- service of about  ----->
@@ -153,13 +175,32 @@
         </div>
         <div class="container">
           <div class="grid">
-            <div class="about-images-container">
-              <div class="about-main-images">
+            <div class="about-main-images">
+              <div class="about-image-and-text pink">
+                <h3>Home Cleaning</h3>
                 <img src="images/about-image1.avif" alt="" />
+              </div>
+              <div class="about-image-and-text blue">
+                <h3 class="maid">Maid Service</h3>
                 <img src="images/about-image2.avif" alt="" />
+              </div>
+              <div class="about-image-and-text blue2">
+                <h3 class="maid">Window Washing</h3>
                 <img src="images/about-image3.avif" alt="" />
+              </div>
+              <div class="about-image-and-text green">
+                <h3 class="maid">Commercial Cleaning</h3>
                 <img src="images/about-image4.avif" alt="" />
+              </div>
+              <div class="about-image-and-text red">
+                <h3 class="maid">Carpet Cleaning</h3>
                 <img src="images/about-image5.avif" alt="" />
+              </div>
+              <div class="about-image-and-text yellow">
+                <h3 class="maid">
+                  Move In/Move Out <br />
+                  Cleaning
+                </h3>
                 <img src="images/about-image6.avif" alt="" />
               </div>
             </div>
@@ -346,7 +387,13 @@
                 for top-quality cleaning services tailored to your needs. Let us
                 bring sparkle and shine your space!
               </p>
-              <button>Book a Visit Now</button>
+              <button
+                onclick="redirectToPage()"
+                data-aos="fade-up"
+                data-aos-duration="800"
+              >
+                Book a Visit Now
+              </button>
             </div>
             <div class="last-img">
               <img
@@ -414,5 +461,11 @@
 
     <script src="aos.js"></script>
     <script src="script.js"></script>
+
+    <script>
+      function redirectToPage() {
+        window.location.href = "carpet-service.html";
+      }
+    </script>
   </body>
 </html>
