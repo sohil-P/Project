@@ -61,43 +61,7 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-.home-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  margin: 20px 0 0 0;
-}
-.home-text h1 {
-  font-size: var(--fs-4x1);
-  font-weight: 600;
-  margin: 20px 0;
-  padding: 20px 0;
-}
-.home-text p {
-  font-size: var(--fs-lg);
-  font-weight: 400;
-  margin: 20px 0;
-  padding: 15px 0;
-  width: 80%;
-  color: var(--text-dark-gray);
-}
-.home-text button {
-  padding: 12px 20px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: var(--fs-lg);
-  font-weight: 500;
-  background: var(--main-color);
-  color: var(--text-x-dark-gray);
-  transition: 0.5s;
-  box-shadow: var(--shadow);
-}
-.home-text button:hover {
-  background: var(--body-bg-color);
-}
+
 
 /*----------- service of about ---------*/
 
