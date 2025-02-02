@@ -48,7 +48,7 @@
       <section class="service-home" id="service-home">
         <div class="container">
           <div class="grid service-grid">
-            <div class="service-home-img">
+            <div class="slider-container">
               <h2
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -56,11 +56,17 @@
               >
                 Carpet Cleaning Service
               </h2>
+              <div class="slider" data-aos="fade-up" data-aos-duration="1000">
+                <img src="images/carpet-1.jpg" alt="Carpet Cleaning 1" />
+                <img src="images/carpet-2.jpg" alt="Carpet Cleaning 2" />
+                <img src="images/carpet-3.jpg" alt="Carpet Cleaning 3" />
+              </div>
+            </div>
+            <div class="service-home-details">
               <p
                 class="carpet-text"
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-delay="300"
               >
                 Transform your home with our professional carpet cleaning
                 service. We use state-of-the-art equipment and eco-friendly
@@ -70,29 +76,20 @@
                 customer satisfaction. Say goodbye to stubborn stains and hello
                 to fresh, clean carpets!
               </p>
-              <div class="service-imgs">
-                <img
-                  src="images/carpet-1.jpg"
-                  alt=""
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                />
-                <img
-                  src="images/carpet-2.jpg"
-                  alt=""
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
-                />
-                <img
-                  src="images/carpet-3.jpg"
-                  alt=""
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
-                />
+              <div class="service-rating-section">
+                <p>Rating</p>
+                <div class="rating-star">
+                  <h5>4.0</h5>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  
+                </div>
               </div>
             </div>
+
             <div class="service-home-text">
               <form action="service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
@@ -500,7 +497,12 @@
                   </p> </label
                 ><br />
 
-                <input type="submit" name="submit" value="Buy now" class="btn buy" />
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Buy now"
+                  class="btn buy"
+                />
               </form>
             </div>
           </div>
@@ -564,5 +566,22 @@
     <script src="aos.js"></script>
     <script src="script.js"></script>
     <script src="service.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let index = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+          index = (index + 1) % totalSlides;
+          document.querySelector(".slider").style.transform = `translateX(-${
+            index * 100
+          }%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+      });
+    </script>
   </body>
 </html>
