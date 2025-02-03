@@ -48,7 +48,7 @@
       <section class="service-home" id="service-home">
         <div class="container">
           <div class="grid service-grid">
-            <div class="service-home-img">
+            <div class="slider-container">
               <h2
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -56,12 +56,14 @@
               >
                 Car Cleaning Service
               </h2>
-              <p
-                class="carpet-text"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="300"
-              >
+              <div class="slider" data-aos="fade-up" data-aos-duration="1000">
+                <img src="images/car-cleaning1.jpg" alt="Car Cleaning 1" />
+                <img src="images/car-cleaning2.jpg" alt="Car Cleaning 2" />
+                <img src="images/car-cleaning3.jpg" alt="Car Cleaning 3" />
+              </div>
+            </div>
+            <div class="service-home-details">
+              <p class="car-text" data-aos="fade-up" data-aos-duration="1000">
                 We give your car the care it deserves with our Premium Car
                 Cleaning Service. Our team of specialists uses high-quality,
                 eco-friendly products to ensure your vehicle looks as good as
@@ -71,29 +73,30 @@
                 packages that cater to all your car cleaning needs and
                 experience the ultimate satisfaction of a pristine vehicle!
               </p>
-              <div class="service-imgs">
-                <img
-                  src="images/car-cleaning1.jpg"
-                  alt=""
+              <div class="service-rating-section">
+                <p
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                />
-                <img
-                  src="images/car-cleaning2.jpg"
-                  alt=""
+                  data-aos-delay="100"
+                >
+                  Rating
+                </p>
+                <div
+                  class="rating-star"
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  data-aos-delay="200"
-                />
-                <img
-                  src="images/car-cleaning3.jpg"
-                  alt=""
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
-                />
+                  data-aos-delay="100"
+                >
+                  <h5>3.8</h5>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
               </div>
             </div>
+
             <div class="service-home-text">
               <form action="./service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
@@ -208,7 +211,6 @@
                         value="Car Cleaning"
                         name="service"
                         id=""
-                       
                         required
                         data-aos="fade-up"
                         data-aos-duration="1000"
@@ -406,15 +408,14 @@
                       >Price</label
                     >
                     <input
-                    type="text"
-                    name="prices"
-                    id="main-price"
-                    value="$360"
-                  
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="500"
-                  />
+                      type="text"
+                      name="prices"
+                      id="main-price"
+                      value="$360"
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      data-aos-delay="500"
+                    />
 
                     <label
                       for="payment_method"
@@ -503,7 +504,12 @@
                   </p> </label
                 ><br />
 
-                <input type="submit" name="submit" value="Buy now" class="btn buy" />
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Buy now"
+                  class="btn buy"
+                />
               </form>
             </div>
           </div>
@@ -567,5 +573,22 @@
     <script src="aos.js"></script>
     <script src="script.js"></script>
     <script src="service.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let index = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+          index = (index + 1) % totalSlides;
+          document.querySelector(".slider").style.transform = `translateX(-${
+            index * 100
+          }%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+      });
+    </script>
   </body>
 </html>

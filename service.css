@@ -50,6 +50,7 @@
 .slider img {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 .slider-container h2 {
   font-size: var(--fs-4x1);

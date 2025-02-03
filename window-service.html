@@ -48,7 +48,7 @@
       <section class="service-home" id="service-home">
         <div class="container">
           <div class="grid service-grid">
-            <div class="service-home-img">
+            <div class="slider-container">
               <h2
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -56,11 +56,17 @@
               >
                 Window Cleaning Service
               </h2>
+              <div class="slider" data-aos="fade-up" data-aos-duration="1000">
+                <img src="images/window-clean1.jpg" alt="Window Cleaning 1" />
+                <img src="images/window-clean3.jpg" alt="Window Cleaning 3" />
+                <img src="images/window-clean2.jpg" alt="Window Cleaning 2" />
+              </div>
+            </div>
+            <div class="service-home-details">
               <p
-                class="carpet-text"
+                class="window-text"
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-delay="300"
               >
                 Brighten your home or office with our professional window
                 cleaning service. We use the latest techniques and eco-friendly
@@ -70,29 +76,30 @@
                 clearer view and let the sunlight in with our top-quality window
                 cleaning service!
               </p>
-              <div class="service-imgs">
-                <img
-                  src="images/window-clean1.jpg"
-                  alt=""
+              <div class="service-rating-section">
+                <p
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                />
-                <img
-                  src="images/window-clean2.jpg"
-                  alt=""
+                  data-aos-delay="100"
+                >
+                  Rating
+                </p>
+                <div
+                  class="rating-star"
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  data-aos-delay="200"
-                />
-                <img
-                  src="images/window-clean3.jpg"
-                  alt=""
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
-                />
+                  data-aos-delay="100"
+                >
+                  <h5>4.5</h5>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
               </div>
             </div>
+
             <div class="service-home-text">
               <form action="./service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
@@ -207,7 +214,6 @@
                         value="Window Cleaning"
                         name="service"
                         id=""
-                        
                         required
                         data-aos="fade-up"
                         data-aos-duration="1000"
@@ -409,7 +415,6 @@
                       name="prices"
                       id="main-price"
                       value="$360"
-                      
                       data-aos="fade-up"
                       data-aos-duration="1000"
                       data-aos-delay="500"
@@ -502,7 +507,12 @@
                   </p> </label
                 ><br />
 
-                <input type="submit" name="submit" value="Buy now" class="btn buy" />
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Continue"
+                  class="btn buy"
+                />
               </form>
             </div>
           </div>
@@ -566,5 +576,23 @@
     <script src="aos.js"></script>
     <script src="script.js"></script>
     <script src="service.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let index = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+          index = (index + 1) % totalSlides;
+          document.querySelector(".slider").style.transform = `translateX(-${
+            index * 100
+          }%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+      });
+    </script>
+
   </body>
 </html>
