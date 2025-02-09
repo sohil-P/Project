@@ -53,12 +53,12 @@
   object-fit: cover;
 }
 .slider-container h2 {
-  font-size: var(--fs-4x1);
-  margin: 0 0 20px 0;
+  font-size: var(--fs-3x1);
+  margin: 0 0 15px 0;
 }
 .service-home-details p {
   font-size: var(--fs-lg);
-  margin: 80px 0 0 0;
+  margin: 55px 0 0 0;
   text-align: justify;
   font-weight: 500;
 }
