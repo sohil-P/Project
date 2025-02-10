@@ -67,6 +67,7 @@ th {
         <button id="showAdmin">Show Admin</button>
         <button id="showUser">Show User</button>
         <button id="showBookService">Show BookService</button>
+        <button id="showService">Show Feedback-Details</button>
     </div>
 
     <script>
@@ -102,6 +103,9 @@ th {
         });
         document.getElementById("showBookService").addEventListener("click", function(){
                    window.location.href="./admindashboard.php";
+        });
+        document.getElementById("showService").addEventListener("click", function(){
+                   window.location.href="./showFeedback.php";
         });
 
     </script>

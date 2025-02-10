@@ -28,6 +28,8 @@ echo "<th>State</th>";
 echo "<th>Pincode</th>";
 echo "<th>S_ID</th>";
 echo "<th>BS_ID</th>";
+echo "<th>SS_ID</th>";
+echo "<th>PS_ID</th>";
 
 foreach($result as $student){
    
@@ -41,7 +43,9 @@ foreach($result as $student){
     <td>".$student['State']."</td>
     <td>".$student['Pincode']."</td>
     <td><a href='showServices.php?id=".$student['S_ID']."'>".$student['S_ID']."</a></td>
-    <td><a href='showBasic.php?id=".$student['BS_ID']."'>".$student['BS_ID']."</a></td>
+    <td><a href='basic_service.php?id=".$student['BS_ID']."'>".$student['BS_ID']."</a></td>
+    <td><a href='standard_service.php?id=".$student['SS_ID']."'>".$student['SS_ID']."</a></td>
+    <td><a href='premium_service.php?id=".$student['PS_ID']."'>".$student['PS_ID']."</a></td>
 
     <td><form method='post'>
      <button name='delete' value=".$student['B_ID'].">DELETE</button>
