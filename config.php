@@ -5,6 +5,7 @@ $password=null;
 $database='cleaning services';
 
 
+
 $conn =new  mysqli($host,$username,$password,$database);
 if($conn->connect_error){
     echo "Failed to connect DB".$conn->connect_error;

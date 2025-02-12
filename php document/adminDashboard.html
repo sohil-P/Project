@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <button id="showAdmin">Show Admin</button>
+        <button id="showUser">Show User</button>
+        <button id="showBookService">Show BookService</button>
+        <button id="showService">Show Feedback-Details</button>
+    </div>
+
+    <script>
+        // $(document).ready(function() {
+        //     $('#showBooks').click(function() {
+        //         $.ajax({
+        //             url: 'admindashboard.php',
+        //             method: 'GET',
+        //             success: function(data) {
+        //                 $('#booksBody').html(data);
+        //                 $('#booksTable').show();
+        //             }
+        //         });
+        //     });
+
+        //     $('#hideBooks').click(function() {
+        //         $.ajax({
+        //             url: 'delete_data.php',
+        //             method: 'POST',
+        //             success: function(data) {
+        //                 $('#booksBody').html(data);
+        //                 $('#booksTable').show();    
+        //             }
+        //         })
+              
+        //     });
+        // });
+        document.getElementById("showAdmin").addEventListener("click", function() {
+                    window.location.href = "./Admin login.php";      
+        });
+        document.getElementById("showUser").addEventListener("click", function() {
+                    window.location.href = "./showUser.php";      
+        });
+        document.getElementById("showBookService").addEventListener("click", function(){
+                   window.location.href="./admindashboard.php";
+        });
+        document.getElementById("showService").addEventListener("click", function(){
+                   window.location.href="./showFeedback.php";
+        });
+
+    </script>
+</body>
+</html>
