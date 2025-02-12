@@ -62,25 +62,25 @@
   text-align: justify;
   font-weight: 500;
 }
-.service-rating-section p{
-    margin: 20px 0 0 0;
-    font-size: var(--fs-2x1);
-    font-weight: 700;
+.service-rating-section p {
+  margin: 20px 0 0 0;
+  font-size: var(--fs-2x1);
+  font-weight: 700;
 }
-.rating-star{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 10px 0 0 0;
+.rating-star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0 0 0;
 }
-.rating-star i{
-    color: var(--main-color);
-    font-size: var(--fs-lg);
-}  
-.rating-star h5{
-    font-size: var(--fs-2x1);
-    margin-right: 10px;
-    margin-bottom: 10px;
+.rating-star i {
+  color: var(--main-color);
+  font-size: var(--fs-lg);
+}
+.rating-star h5 {
+  font-size: var(--fs-2x1);
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 /* --------- form details --------- */
@@ -96,14 +96,18 @@
 .form-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 .personal-detail {
   padding: 8px;
   display: flex;
   flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 .personal-detail h3 {
-  margin: 0 0 15px 0;
+  margin: 15px 10px;
   font-size: var(--fs-lg);
   font-weight: 600;
 }
@@ -113,7 +117,6 @@
   font-size: var(--fs-md);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  width: 80%;
   outline: none;
   background: var(--bg-color);
 }
@@ -122,9 +125,12 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 .address-detail h3 {
-  margin: 0 0 15px 0;
+  margin: 15px 10px;
   font-size: var(--fs-lg);
   font-weight: 600;
 }
@@ -134,7 +140,6 @@
   font-size: var(--fs-md);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  width: 80%;
   outline: none;
   background: var(--bg-color);
 }
@@ -143,9 +148,12 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 .service-detail h3 {
-  margin: 0 0 15px 0;
+  margin: 15px 10px;
   font-size: var(--fs-lg);
   font-weight: 600;
 }
@@ -156,7 +164,7 @@
   color: var(--text-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  width: 80%;
+  width: 100%;
   outline: none;
   background: var(--bg-color);
 }
@@ -167,7 +175,7 @@
   color: var(--text-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  width: 80%;
+  width: 100%;
   outline: none;
   background: var(--bg-color);
 }
@@ -178,7 +186,7 @@
   color: var(--text-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  width: 80%;
+  width: 100%;
   outline: none;
   background: var(--bg-color);
 }
@@ -187,9 +195,12 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 .worker-detail h3 {
-  margin: 0 0 15px 0;
+  margin: 15px 10px;
   font-size: var(--fs-lg);
   font-weight: 600;
 }
@@ -201,62 +212,21 @@
   color: var(--text-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  width: 80%;
+  width: 100%;
   outline: none;
   background: var(--bg-color);
+}
+.worker-detail #main-price {
+  margin: 0 0 15px 0;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--text-x-dark-gray);
+  background: var(--bg-color);
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
 }
 
-.payment-detail {
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-}
-.payment-detail h3 {
-  margin: 0 0 15px 0;
-  font-size: var(--fs-lg);
-  font-weight: 600;
-}
-.payment-detail #main-price {
-  margin: 0 0 15px 0;
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  color: #000;
-  width: 50%;
-  background: var(--bg-color);
-  padding: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 30px;
-}
-.payment-detail select {
-  padding: 10px;
-  margin: 0 0 17px 0;
-  font-size: var(--fs-md);
-  color: var(--text-dark-gray);
-  border: 1px solid var(--border-color);
-  border-radius: 30px;
-  width: 80%;
-  outline: none;
-  background: var(--bg-color);
-}
-.card-detail h3 {
-  margin: 0 0 15px 0;
-  font-size: var(--fs-lg);
-  font-weight: 600;
-}
-.card-detail input {
-  padding: 10px;
-  margin: 0 0 17px 0;
-  font-size: var(--fs-md);
-  color: var(--text-dark-gray);
-  border: 1px solid var(--border-color);
-  border-radius: 30px;
-  width: 80%;
-  outline: none;
-  background: var(--bg-color);
-}
-.card-hidden {
-  display: none;
-}
 .service-home-text .terms {
   display: flex;
   align-items: center;
@@ -289,9 +259,7 @@
   .personal-detail h3,
   .address-detail h3,
   .service-detail h3,
-  .worker-detail h3,
-  .payment-detail h3,
-  .card-detail h3 {
+  .worker-detail h3 {
     font-size: var(--fs-lg);
   }
   .personal-detail input,
@@ -299,9 +267,7 @@
   .service-detail input,
   .service-type select,
   .service-frequency select,
-  .worker-detail select,
-  .payment-detail select,
-  .card-detail input {
+  .worker-detail select {
     font-size: var(--fs-md);
     width: 90%;
   }
@@ -317,7 +283,7 @@
     font-size: var(--fs-md);
     margin: 50px 0 0 0;
   }
-  .service-rating-section p{
+  .service-rating-section p {
     font-size: var(--fs-2x1);
   }
   .service-home-text form h2 {
@@ -332,9 +298,7 @@
   .personal-detail h3,
   .address-detail h3,
   .service-detail h3,
-  .worker-detail h3,
-  .payment-detail h3,
-  .card-detail h3 {
+  .worker-detail h3 {
     font-size: var(--fs-md);
   }
   .personal-detail input,
@@ -342,9 +306,7 @@
   .service-detail input,
   .service-type select,
   .service-frequency select,
-  .worker-detail select,
-  .payment-detail select,
-  .card-detail input {
+  .worker-detail select {
     font-size: var(--fs-sm);
     width: 100%;
   }
@@ -358,13 +320,13 @@
     grid-column: span 12;
   }
   .slider-container h2 {
-    font-size: var(--fs-4x1);
+    font-size: var(--fs-3x1);
   }
   .service-home-details p {
     font-size: var(--fs-lg);
     margin: 20px 0 0 0;
   }
-  .service-rating-section p{
+  .service-rating-section p {
     font-size: var(--fs-2x1);
   }
   .form-container {
@@ -376,9 +338,7 @@
   .personal-detail h3,
   .address-detail h3,
   .service-detail h3,
-  .worker-detail h3,
-  .payment-detail h3,
-  .card-detail h3 {
+  .worker-detail h3 {
     font-size: var(--fs-lg);
   }
   .personal-detail input,
@@ -386,9 +346,7 @@
   .service-detail input,
   .service-type select,
   .service-frequency select,
-  .worker-detail select,
-  .payment-detail select,
-  .card-detail input {
+  .worker-detail select {
     font-size: var(--fs-sm);
     width: 100%;
   }
@@ -399,12 +357,12 @@
 
 @media (max-width: 575px) {
   .slider-container h2 {
-    font-size: var(--fs-4x1);
+    font-size: var(--fs-3x1);
   }
   .service-home-text form h2 {
     font-size: var(--fs-3x1);
   }
-  .service-rating-section p{
+  .service-rating-section p {
     font-size: var(--fs-2x1);
   }
   .service-imgs {
@@ -416,26 +374,22 @@
   .personal-detail h3,
   .address-detail h3,
   .service-detail h3,
-  .worker-detail h3,
-  .payment-detail h3,
-  .card-detail h3 {
-    font-size: var(--fs-md);
+  .worker-detail h3 {
+    font-size: var(--fs-lg);
     margin-top: 10px;
   }
   .personal-detail input,
   .address-detail input {
     margin-top: 0;
-    margin: 0 0 17px 0;
+    margin: 0 0 25px 0;
   }
   .personal-detail input,
   .address-detail input,
   .service-detail input,
   .service-type select,
   .service-frequency select,
-  .worker-detail select,
-  .payment-detail select,
-  .card-detail input {
-    font-size: var(--fs-sm);
+  .worker-detail select {
+    font-size: var(--fs-md);
     width: 100%;
   }
   .service-home-text form .buy {

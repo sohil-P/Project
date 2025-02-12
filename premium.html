@@ -72,7 +72,7 @@
                   ><img src="images/furniture.png" alt="furniture"
                 /></a>
               </div>
-              <input type="checkbox" id="checkbox1" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox1" onchange="updateValue()" />
               <h3>furniture cleaning</h3>
             </div>
 
@@ -83,11 +83,9 @@
               data-aos-delay="100"
             >
               <div class="img-box">
-                <a href="#"
-                  ><img src="images/kitchen1.jpeg" alt="kitchen"
-                /></a>
+                <a href="#"><img src="images/kitchen1.jpeg" alt="kitchen" /></a>
               </div>
-              <input type="checkbox"  id="checkbox2" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox2" onchange="updateValue()" />
               <h3>Kitchen cleaning</h3>
             </div>
 
@@ -102,7 +100,7 @@
                   ><img src="images/car.jpg" alt="car"
                 /></a>
               </div>
-              <input type="checkbox"  id="checkbox3" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox3" onchange="updateValue()" />
               <h3>car cleaning</h3>
             </div>
 
@@ -117,7 +115,7 @@
                   ><img src="images/bathroom.jpg" alt="bathroom"
                 /></a>
               </div>
-              <input type="checkbox" id="checkbox4" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox4" onchange="updateValue()" />
               <h3>bathroom cleaning</h3>
             </div>
             <div
@@ -131,7 +129,7 @@
                   ><img src="images/window.jpg" alt="window"
                 /></a>
               </div>
-              <input type="checkbox" id="checkbox5" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox5" onchange="updateValue()" />
               <h3>window cleaning</h3>
             </div>
             <div
@@ -145,7 +143,7 @@
                   ><img src="images/house.jpg" alt="carpet"
                 /></a>
               </div>
-              <input type="checkbox" id="checkbox6" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox6" onchange="updateValue()" />
               <h3>carpet cleaning</h3>
             </div>
             <div
@@ -159,7 +157,7 @@
                   ><img src="images/office cleaning.jpg" alt="office"
                 /></a>
               </div>
-              <input type="checkbox" id="checkbox7" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox7" onchange="updateValue()" />
               <h3>office cleaning</h3>
             </div>
             <div
@@ -173,7 +171,7 @@
                   ><img src="images/medical-cleaning.jpg" alt="medical"
                 /></a>
               </div>
-              <input type="checkbox"  id="checkbox8" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox8" onchange="updateValue()" />
               <h3>medical cleaning</h3>
             </div>
             <div
@@ -187,7 +185,7 @@
                   ><img src="images/restaurant-clean.jpg" alt="restaurant"
                 /></a>
               </div>
-              <input type="checkbox"  id="checkbox9" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox9" onchange="updateValue()" />
               <h3>restaurant cleaning</h3>
             </div>
             <div
@@ -201,7 +199,7 @@
                   ><img src="images/event-cleaning.png" alt="event"
                 /></a>
               </div>
-              <input type="checkbox"  id="checkbox10" onchange="updateValue()"/>
+              <input type="checkbox" id="checkbox10" onchange="updateValue()" />
               <h3>event cleaning</h3>
             </div>
 
@@ -316,7 +314,7 @@
                       >
                       <input
                         type="text"
-                       value="All services"
+                        value="All services"
                         name="service"
                         id="myTextbox"
                         required
@@ -494,16 +492,6 @@
                         <option value="50">50</option>
                       </select>
                     </div>
-                  </div>
-
-                  <div class="payment-detail">
-                    <h3
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="500"
-                    >
-                      Payment Information
-                    </h3>
                     <label
                       for="price"
                       data-aos="fade-up"
@@ -516,78 +504,9 @@
                       name="prices"
                       id="main-price"
                       value="$2080"
-                    
                       data-aos="fade-up"
                       data-aos-duration="1000"
                       data-aos-delay="500"
-                    />
-
-                    <label
-                      for="payment_method"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="500"
-                      >Payment Method:</label
-                    >
-                    <select
-                      name="payment_method"
-                      id="payment_method"
-                      required
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="500"
-                    >
-                      <option value="cash_on_delivery">Cash to Pay</option>
-                      <option value="upi">UPI</option>
-                      <option value="credit_card">Credit Card</option>
-                      <option value="debit_card">Debit Card</option>
-                    </select>
-                  </div>
-
-                  <div class="card-detail card-hidden">
-                    <h3
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="600"
-                    >
-                      Card Information
-                    </h3>
-                    <label
-                      for="card_detail"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="600"
-                      >for card user * </label
-                    ><br />
-                    <input
-                      type="text"
-                      name="card_number"
-                      placeholder="Card Number"
-                      class="service-inputs"
-                      required
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="600"
-                    />
-                    <input
-                      type="text"
-                      name="expiry_date"
-                      placeholder="Expiry Date : MM/YY"
-                      class="service-inputs"
-                      required
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="600"
-                    />
-                    <input
-                      type="text"
-                      name="cvv"
-                      placeholder="CVV"
-                      class="service-inputs"
-                      required
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="600"
                     />
                   </div>
                 </div>
@@ -609,7 +528,7 @@
                   </p> </label
                 ><br />
 
-                <input type="submit" name="submit" value="Buy now" class="btn buy" />
+                <a href="carpet-payment.html" class="btn">Continue</a>
               </form>
             </div>
           </div>
@@ -674,53 +593,53 @@
     <script src="aos.js"></script>
     <script src="premium.js"></script>
     <script>
-      function updateValue(){
-  var checkbox1 = document.getElementById("checkbox1");
-  var checkbox2 = document.getElementById("checkbox2");
-  var checkbox3 = document.getElementById("checkbox3");
-  var checkbox4 = document.getElementById("checkbox4");
-  var checkbox5 = document.getElementById("checkbox5");
-  var checkbox6 = document.getElementById("checkbox6");
-  var checkbox7 = document.getElementById("checkbox7");
-  var checkbox8 = document.getElementById("checkbox8");
-  var checkbox9 = document.getElementById("checkbox9");
-  var checkbox10 =document.getElementById("checkbox10");
-  var textbox = document.getElementById("myTextbox");
+      function updateValue() {
+        var checkbox1 = document.getElementById("checkbox1");
+        var checkbox2 = document.getElementById("checkbox2");
+        var checkbox3 = document.getElementById("checkbox3");
+        var checkbox4 = document.getElementById("checkbox4");
+        var checkbox5 = document.getElementById("checkbox5");
+        var checkbox6 = document.getElementById("checkbox6");
+        var checkbox7 = document.getElementById("checkbox7");
+        var checkbox8 = document.getElementById("checkbox8");
+        var checkbox9 = document.getElementById("checkbox9");
+        var checkbox10 = document.getElementById("checkbox10");
+        var textbox = document.getElementById("myTextbox");
 
-  var selectedOptions =[];
+        var selectedOptions = [];
 
-  if(checkbox1.checked){
-      selectedOptions.push("Furniture Cleaning");
-  }
-  if(checkbox2.checked){
-      selectedOptions.push("Kitchen Cleaning");
-  }
-  if(checkbox3.checked){
-      selectedOptions.push("Car Cleaning");
-  }
-  if(checkbox4.checked){
-    selectedOptions.push("Bathroom Cleaning");
-  }
-  if(checkbox5.checked){
-    selectedOptions.push("Window Cleaning");
-  }
-  if(checkbox6.checked){
-    selectedOptions.push("Carpet Cleaning");
-  }
-  if(checkbox7.checked){
-    selectedOptions.push("Office Cleaning");
-  }
-  if(checkbox8.checked){
-    selectedOptions.push("Medical Cleaning");
-  }
-  if(checkbox9.checked){
-    selectedOptions.push("Resturant Cleaning");
-  }
-  if(checkbox10.checked){
-   selectedOptions.push("Event Cleaning");
-  }
-  textbox.value = selectedOptions.join(",");
-}
+        if (checkbox1.checked) {
+          selectedOptions.push("Furniture Cleaning");
+        }
+        if (checkbox2.checked) {
+          selectedOptions.push("Kitchen Cleaning");
+        }
+        if (checkbox3.checked) {
+          selectedOptions.push("Car Cleaning");
+        }
+        if (checkbox4.checked) {
+          selectedOptions.push("Bathroom Cleaning");
+        }
+        if (checkbox5.checked) {
+          selectedOptions.push("Window Cleaning");
+        }
+        if (checkbox6.checked) {
+          selectedOptions.push("Carpet Cleaning");
+        }
+        if (checkbox7.checked) {
+          selectedOptions.push("Office Cleaning");
+        }
+        if (checkbox8.checked) {
+          selectedOptions.push("Medical Cleaning");
+        }
+        if (checkbox9.checked) {
+          selectedOptions.push("Resturant Cleaning");
+        }
+        if (checkbox10.checked) {
+          selectedOptions.push("Event Cleaning");
+        }
+        textbox.value = selectedOptions.join(",");
+      }
     </script>
   </body>
 </html>
