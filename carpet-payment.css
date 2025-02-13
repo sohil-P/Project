@@ -25,72 +25,81 @@
   --fs-sm: 14px;
 }
 
-
-.service-payment-info{
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 30px;
+.service-payment-info {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
 }
-.service-payment-home .grid{
-    margin-top: 15%;
+.service-payment-home .grid {
+  margin-top: 15%;
 }
 .payment-info-card,
-.card-detail{
-    grid-column: span 6;
+.card-detail {
+  grid-column: span 6;
 }
 .payment-info-card {
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-color);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-  }
-  .payment-info-card h3 {
-    margin: 15px 10px;
-    font-size: var(--fs-lg);
-    font-weight: 600;
-  }
-  .payment-info-card select {
-    padding: 10px;
-    margin: 0 0 17px 0;
-    font-size: var(--fs-md);
-    color: var(--text-dark-gray);
-    border: 1px solid var(--border-color);
-    border-radius: 30px;
-    outline: none;
-    background: var(--bg-color);
-  }
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.payment-info-card h3 {
+  margin: 15px 10px;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.payment-info-card select {
+  padding: 10px;
+  margin: 0 0 17px 0;
+  font-size: var(--fs-md);
+  color: var(--text-dark-gray);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  outline: none;
+  background: var(--bg-color);
+}
+.card-detail {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.card-detail label {
+  margin: 0 10px;
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+.card-detail h3 {
+  margin: 15px 10px;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.card-detail input {
+  padding: 10px;
+  margin: 0 0 17px 0;
+  font-size: var(--fs-md);
+  color: var(--text-dark-gray);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  width: 100%;
+  outline: none;
+  background: var(--bg-color);
+}
+.card-hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .payment-info-card,
   .card-detail {
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-color);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    grid-column: span 12;
   }
-  .card-detail label {
-    margin: 0 10px;
-    font-size: var(--fs-lg);
-    font-weight: 500;
+  .service-payment-home .grid{
+    margin-top: 30%;
   }
-  .card-detail h3 {
-    margin: 15px 10px;
-    font-size: var(--fs-lg);
-    font-weight: 600;
-  }
-  .card-detail input {
-    padding: 10px;
-    margin: 0 0 17px 0;
-    font-size: var(--fs-md);
-    color: var(--text-dark-gray);
-    border: 1px solid var(--border-color);
-    border-radius: 30px;
-    width: 80%;
-    outline: none;
-    background: var(--bg-color);
-  }
-  .card-hidden {
-    display: none;
-  }
+}

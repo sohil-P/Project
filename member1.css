@@ -33,7 +33,10 @@
 .member-home-img img {
   width: 350px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  padding: 10px;
+  box-shadow: var(--shadow);
 }
 .member-home-text h1 {
   font-size: var(--fs-3x1);
@@ -102,4 +105,17 @@
     width: 40px;
     font-size: var(--fs-md);
   }
+}
+
+.gallery-items-box{
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+.gallery-item{
+  grid-column: span 4;
+}
+.gallery-item img{
+  border-radius: 10px;
 }
