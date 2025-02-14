@@ -1,13 +1,3 @@
-// const cards = document.querySelector(".card-detail");
-// const payments = document.querySelector(".payment-detail select");
-// payments.addEventListener("change", (e) => {
-//   if (e.target.value === "credit_card" || e.target.value === "debit_card") {
-//     cards.classList.remove("card-hidden");
-//   } else {
-//     cards.classList.add("card-hidden");
-//   }
-// });
-
 const frequency = document.querySelector(".service-frequency select");
 const price = document.getElementById("main-price");
 const quantitySelect = document.getElementById("workers-numbers");
@@ -62,3 +52,7 @@ const calculatePrice = () => {
 // Attach event listeners
 frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
+
+function basicRedirect(){
+  window.location.href = "carpet-payment.html";
+}
