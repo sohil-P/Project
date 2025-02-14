@@ -33,12 +33,12 @@ if(isset($_POST['submit'])){
     if($result){
         echo "<script>
         alert(' Booking successful. Your Booking ID is :$last_id')
-        window.location.href='window-service.html'
+        window.location.href='carpet-payment.html'
        </script>";
     }else{
         echo "<script>
         alert('Not Book the service')
-        window.location.href='window-service.html'
+        window.location.href='carpet-payment.html'
        </script>";
     }
 }
