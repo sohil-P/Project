@@ -86,3 +86,7 @@ const calculatePrice = () => {
 // Attach event listeners
 frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
+
+function standardRedirect() {
+  window.location.href = "carpet-payment.html";
+}

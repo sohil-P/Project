@@ -111,6 +111,9 @@ const calculatePrice = () => {
 frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
 
+function premiumRedirect(){
+  window.location.href = "carpet-payment.html";
+}
 
 
 // get service from checkbox
