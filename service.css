@@ -63,7 +63,7 @@
   font-weight: 500;
 }
 .service-rating-section p {
-  margin: 20px 0 0 0;
+  margin: 20px 0;
   font-size: var(--fs-2x1);
   font-weight: 700;
 }
@@ -81,6 +81,27 @@
   font-size: var(--fs-2x1);
   margin-right: 10px;
   margin-bottom: 10px;
+}
+.rating-price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin: 20px 0 0 0;
+}
+.service-price-section p {
+  font-size: var(--fs-2x1);
+  margin: 20px 0;
+  font-weight: 700;
+}
+.service-price-section h5 {
+  font-size: var(--fs-2x1);
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.title-price-value span {
+  font-size: var(--fs-lg);
+  font-weight: 500;
 }
 
 /* --------- form details --------- */
@@ -326,8 +347,20 @@
     font-size: var(--fs-lg);
     margin: 20px 0 0 0;
   }
+  .rating-price-section{
+    margin: 0 0 20px 0;
+  }
   .service-rating-section p {
     font-size: var(--fs-2x1);
+  }
+  .rating-price-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .service-price-section p {
+    font-size: var(--fs-2x1);
+    margin: 15px 0;
+    font-weight: 700;
   }
   .form-container {
     grid-template-columns: repeat(2, 1fr);
