@@ -45,7 +45,10 @@
         </div>
       </header>
 
-      <section class="service-payment-home" id="service-payment-home">
+      <section
+        class="service-payment-home section-padding"
+        id="service-payment-home"
+      >
         <div class="container">
           <div class="grid">
             <div class="service-payment-info">
@@ -58,29 +61,27 @@
                   Payment Information
                 </h3>
 
-                <label
-                  for="payment_method"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="500"
-                  >Payment Method:</label
-                >
-                <select
-                  name="payment_method"
-                  id="payment_method"
-                  required
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="500"
-                >
-                  <option value="cash_on_delivery">Cash to Pay</option>
-                  <option value="upi">UPI</option>
-                  <option value="credit_card">Credit Card</option>
-                  <option value="debit_card">Debit Card</option>
-                </select>
+                <p>Payment Method :</p>
+                <input
+                  type="text"
+                  class="pay-method"
+                  value="Cash on Delivery"
+                  readonly
+                />
+                <button class="buybtn" onclick="showPopup()" value="submit">
+                  Buy now
+                </button>
+              </div>
+              <div class="overlay" id="overlay"></div>
+              <div class="popup" id="popup">
+                <div class="popup-content">
+                  <h2>Successfully Purchased!</h2>
+                  <p>Your order will be stored! Your service has been successfully purchased.</p>
+                  <button onclick="openIndex()">OK</button>
+                </div>
               </div>
 
-              <div class="card-detail card-hidden">
+              <!-- <div class="card-detail card-hidden">
                 <h3
                   data-aos="fade-up"
                   data-aos-duration="1000"
@@ -125,11 +126,31 @@
                   data-aos-duration="1000"
                   data-aos-delay="600"
                 />
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </section>
+
+      <!----- footer  ----->
+
+      <div class="footer">
+        <div class="container">
+          <h3>follow us</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/profile.php?id=100084174810296"
+              title="facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sohil_.17/" title="instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" title="youtube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!----- styel-switcher  ----->
@@ -179,6 +200,20 @@
           cards.classList.add("card-hidden");
         }
       });
+
+      function showPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function openIndex() {
+        window.location.href = "index.html";
+      }
+
+      // function hidePopup() {
+      //   document.getElementById("popup").style.display = "none";
+      //   document.getElementById("overlay").style.display = "none";
+      // }
     </script>
   </body>
 </html>
