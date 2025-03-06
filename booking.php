@@ -22,23 +22,25 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
     $state= $_POST['state'];
     $pincode = $_POST['zip'];
-    // $id= $_POST['service'];
-    $query = "INSERT INTO `booking_details`(`Name`,`Email`,`MobileNo`,`Address`,`City`,`State`,`Pincode`,`S_ID`,`BS_ID`,`SS_ID`,`PS_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("sssssssssss", $name, $email, $phone, $address, $city, $state, $pincode, $S_ID, $BS_ID,$SS_ID,$PS_ID);
-    $result = $stmt->execute();
-    $last_id=$conn->insert_id;
+     $query = "INSERT INTO `booking_details`(`Name`,`Email`,`MobileNo`,`Address`,`City`,`State`,`Pincode`,`S_ID`,`BS_ID`,`SS_ID`,`PS_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
+     $stmt = $conn->prepare($query);
+     $stmt->bind_param("sssssssiiii", $name, $email, $phone, $address, $city, $state, $pincode, $S_ID, $BS_ID,$SS_ID,$PS_ID);
+     $result= $stmt->execute();
+    $B_ID = $stmt->insert_id; // Get the last inserted ID
     $stmt->close();
-    
+
+    include("./payment.php");
+
     if($result){
         echo "<script>
-        alert(' Booking successful. Your Booking ID is :$last_id')
-        window.location.href='carpet-payment.html'
+        alert(' Booking successful. Your Booking ID is :$B_ID')
+        window.location.href='carpet-payment.html';
+        
        </script>";
     }else{
         echo "<script>
         alert('Not Book the service')
-        window.location.href='carpet-payment.html'
+        
        </script>";
     }
 }
