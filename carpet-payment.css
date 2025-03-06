@@ -100,7 +100,6 @@
   justify-content: center;
   align-items: center;
   height: 200px;
-  /* background-color: red; */
 }
 .popup h2 {
   margin: 25px 0 0 0;
@@ -189,7 +188,6 @@
   }
   .popup button {
     font-size: var(--fs-md);
-    /* margin: 25px 0 0 0; */
     margin: auto;
   }
 }
