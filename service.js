@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }%)`;
   }
 
-  setInterval(showNextSlide, 3000);
+  setInterval(showNextSlide, 5000);
 });
 
 const frequency = document.querySelector(".service-frequency select");
