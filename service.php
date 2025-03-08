@@ -13,6 +13,7 @@ if(isset($_POST['submit'])){
     $SPrice=$_POST['prices'];
     $Worker_Group=$_POST['worker_group'];
     $Worker = $_POST['workers'];
+    
 
     $stmt = $conn->prepare("INSERT INTO `service_category`(`S_ID`,`Sname`,`Frequency`,`Date`,`Time`,`Price`,`Worker_Group`,`Workers`)
     VALUES (null,'$SName', '$SFrequency', '$SDate', '$STime', '$SPrice', '$Worker_Group', '$Worker')");

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carpet Service Payment</title>
+    <title>Payment </title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="service.css" />
     <link
@@ -45,6 +45,7 @@
         </div>
       </header>
 
+      <form action="./payment.php" method="post">
       <section
         class="service-payment-home section-padding"
         id="service-payment-home"
@@ -64,11 +65,12 @@
                 <p>Payment Method :</p>
                 <input
                   type="text"
+                  name="pay-method"
                   class="pay-method"
                   value="Cash on Delivery"
-                  readonly
+                   readonly
                 />
-                <button class="buybtn" onclick="showPopup()" value="submit">
+              <button class='buybtn' name='payment' onclick='showPopup()' value='submit'>
                   Buy now
                 </button>
               </div>
@@ -131,6 +133,7 @@
           </div>
         </div>
       </section>
+      </form>
 
       <!----- footer  ----->
 
