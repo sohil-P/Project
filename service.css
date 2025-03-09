@@ -90,6 +90,9 @@
   align-items: center;
   gap: 5px;
 }
+.price-info{
+  margin-bottom: 8px;
+}
 .rating-star h5 {
   font-size: var(--fs-2x1);
   margin: 0 8px 8px 0;

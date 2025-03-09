@@ -33,88 +33,48 @@ const calculatePrice = () => {
 
   let total = 0;
 
-  if (selectedQuantity === 4) {
-    total = increment * 4;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
-  } else if (selectedQuantity === 5) {
-    total = increment * 5;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
-  } else if (selectedQuantity === 6) {
-    total = increment * 6;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
-  } else if (selectedQuantity === 7) {
-    total = increment * 7;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
-  } else if (selectedQuantity === 8) {
-    total = increment * 8;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
-  } else if (selectedQuantity === 9) {
-    total = increment * 9;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
-  } else if (selectedQuantity === 10) {
+  if (selectedQuantity === 10) {
     total = increment * 10;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 11) {
     total = increment * 11;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 12) {
     total = increment * 12;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 13) {
     total = increment * 13;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 14) {
     total = increment * 14;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 15) {
     total = increment * 15;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 16) {
     total = increment * 16;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 17) {
     total = increment * 17;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 18) {
     total = basePrice;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity >= 19) {
     total = basePrice + increment * (selectedQuantity - 18);
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (quantitySelect.value === "noneValue") {
     total = basePrice;
-    defaultWorker.style.display = "block";
-    defaultLabel.style.display = "block";
   }
 
   // Display the total price
   price.value = `$${total}`;
+
+  // Update the defaultWorker text
+  defaultWorker.value = selectedQuantity;
+  defaultLabel.innerHTML = `Number of workers:`;
+  if (quantitySelect.value === "noneValue") {
+    defaultWorker.value = "18";
+  }
 };
 
 // Attach event listeners
 frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
 
-function premiumRedirect(){
+function premiumRedirect() {
   window.location.href = "carpet-payment.html";
 }
-
 
 // get service from checkbox
 
@@ -165,6 +125,3 @@ function premiumRedirect(){
 //   }
 //   textbox.value = selectedOptions.join(",  ");
 // }
-
-
-

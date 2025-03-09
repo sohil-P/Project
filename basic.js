@@ -25,34 +25,31 @@ const calculatePrice = () => {
 
   if (selectedQuantity === 4) {
     total = increment * 4;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 5) {
     total = increment * 5;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity === 6) {
     total = basePrice;
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (selectedQuantity >= 7) {
     total = basePrice + increment * (selectedQuantity - 6);
-    defaultWorker.style.display = "none";
-    defaultLabel.style.display = "none";
   } else if (quantitySelect.value === "noneValue") {
     total = basePrice;
-    defaultWorker.style.display = "block";
-    defaultLabel.style.display = "block";
   }
 
   // Display the total price
   price.value = `$${total}`;
+
+  // Update the defaultWorker text
+  defaultWorker.value = selectedQuantity;
+  defaultLabel.innerHTML = `Number of workers:`;
+  if (quantitySelect.value === "noneValue") {
+    defaultWorker.value = "6";
+  }
 };
 
 // Attach event listeners
 frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
 
-function basicRedirect(){
+function basicRedirect() {
   window.location.href = "carpet-payment.html";
 }
