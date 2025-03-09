@@ -119,8 +119,3 @@ const navigation = () => {
   });
 };
 navigation();
-
-// function checkLogin(){
-//     window.open("login.html", "login", "width=600, height=700,top=20 left=450", modal="yes");
-// }
-
