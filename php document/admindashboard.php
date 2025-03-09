@@ -42,11 +42,10 @@ foreach($result as $student){
     <td>".$student['City']."</td>
     <td>".$student['State']."</td>
     <td>".$student['Pincode']."</td>
-    <td><a href='showServices.php?id=".$student['S_ID']."'>".$student['S_ID']."</a></td>
-    <td><a href='basic_service.php?id=".$student['BS_ID']."'>".$student['BS_ID']."</a></td>
-    <td><a href='standard_service.php?id=".$student['SS_ID']."'>".$student['SS_ID']."</a></td>
-    <td><a href='premium_service.php?id=".$student['PS_ID']."'>".$student['PS_ID']."</a></td>
-
+    <td><a href='#' onclick=\"fetchDetails('showServices.php?id=".$student['S_ID']."')\">".$student['S_ID']."</a></td>
+    <td><a href='#' onclick=\"fetchDetails('basic_service.php?id=".$student['BS_ID']."')\">".$student['BS_ID']."</a></td>
+    <td><a href='#' onclick=\"fetchDetails('standard_service.php?id=".$student['SS_ID']."')\">".$student['SS_ID']."</a></td>
+    <td><a href='#' onclick=\"fetchDetails('premium_service.php?id=".$student['PS_ID']."')\">".$student['PS_ID']."</a></td>
     <td><form method='post'>
      <button name='delete' value=".$student['B_ID'].">DELETE</button>
     </form></td>
@@ -54,6 +53,7 @@ foreach($result as $student){
     </tr>";
 }
 echo "</table>";
+echo "<div id='detailsContainer'></div>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];

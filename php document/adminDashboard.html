@@ -64,13 +64,64 @@ th {
 <body>
     <div class="container">
         <h1>Admin Dashboard</h1>
-        <button id="showAdmin"><a href="./adminlogin.php" target="_blank"></a>Show Admin</button>
+        <button id="showAdmin">Show Admin</button>
         <button id="showUser">Show User</button>
         <button id="showBookService">Show BookService</button>
         <button id="showService">Show Feedback-Details</button>
+        <div id="dataContainer" style="display:contents;"></div>
+        <div id="detailsContainer"></div>
     </div>
 
+
     <script>
+        document.getElementById("showAdmin").addEventListener("click", function() {
+            fetchData('adminlogin.php');
+        });
+
+        document.getElementById("showUser").addEventListener("click", function() {
+            fetchData('showUser.php');
+        });
+
+        document.getElementById("showBookService").addEventListener("click", function(){
+            fetchData('admindashboard.php');
+        });
+
+        document.getElementById("showService").addEventListener("click", function(){
+            fetchData('showFeedback.php');
+        });
+
+        function fetchData(url) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: function(data) {
+                    $('#dataContainer').html(data);
+                    // $('#dataContainer').show();
+                    // $('#detailsContainer').hide();
+                },
+                error: function() {
+                    $('#dataContainer').html('<p>An error has occurred</p>');
+                }
+            });
+        }
+
+        function fetchDetails(url) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                success: function(data) {
+                    $('#detailsContainer').html(data);
+                    // $('#dataContainer').hide();
+                    // $('#detailsContainer').show();
+                },
+                error: function() {
+                    $('#detailsContainer').html('<p>An error has occurred</p>');
+                }
+            });
+        }
+    </script>
+
+    <!-- <script>
         // $(document).ready(function() {
         //     $('#showBooks').click(function() {
         //         $.ajax({
@@ -108,6 +159,6 @@ th {
                    window.location.href="./showFeedback.php";
         });
 
-    </script>
+    </script> -->
 </body>
 </html>

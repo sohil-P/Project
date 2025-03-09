@@ -11,11 +11,7 @@ if(isset($_POST['payment'])){
   
     if($result){
         
-        echo "<script>
-        
-        
-        
-        </script>";
+        echo "";
     }
     else{
         echo "payment failed";
@@ -24,3 +20,36 @@ if(isset($_POST['payment'])){
 }
 
 ?>
+<!-- <div class="popup" id="popup">
+                <div class="popup-content">
+                  <h2>Successfully Purchased!</h2>
+                  <p>Your order will be stored! Your service has been successfully purchased.</p>
+                  <button onclick="openIndex()">OK</button>
+                </div>
+              </div> -->
+
+              <!-- '<script>
+        const cards = document.querySelector(".card-detail");
+      const payments = document.querySelector(".payment-info-card select");
+      payments.addEventListener("change", (e) => {
+        if (
+          e.target.value === "credit_card" ||
+          e.target.value === "debit_card"
+        ) {
+          cards.classList.remove("card-hidden");
+        } else {
+          cards.classList.add("card-hidden");
+        }
+      });
+
+      function showPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function openIndex() {
+        window.location.href = "index.html";
+      }
+        
+        
+        </script> -->
