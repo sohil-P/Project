@@ -3,23 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payments Standard</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="aos.css" />
+    <title>BrightWave Cleaners Service</title>
     <link rel="stylesheet" href="service.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-
-    <style>
-      .ps-items {
-        margin-top: 30px;
-      }
-      .service-home-text {
-        margin-top: 50px;
-      }
-    </style>
+    <link rel="stylesheet" href="aos.css" />
   </head>
   <body>
     <div class="preloader js-preloader">
@@ -56,64 +47,95 @@
 
       <section class="service-home" id="service-home">
         <div class="container">
-          <div class="grid">
-            <div
-              class="services-item ps-items"
-              data-aos="fade-up"
-              data-aos-duration="600"
-            >
-              <div class="img-box">
-                <a href="furniture-service.html"
-                  ><img src="images/furniture.webp" loading="lazy" alt="furniture"
-                /></a>
+          <div class="grid service-grid">
+            <div class="slider-container">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
+                Car Cleaning
+              </h2>
+              <div class="slider" data-aos="fade-up" data-aos-duration="1000">
+                <img
+                  src="\images/car-cleaning1.webp"
+                  loading="lazy"
+                  alt="Car Cleaning 1"
+                />
+                <img
+                  src="\images/car-cleaning2.webp"
+                  loading="lazy"
+                  alt="Car Cleaning 2"
+                />
+                <img
+                  src="\images/car-cleaning3.webp"
+                  loading="lazy"
+                  alt="Car Cleaning 3"
+                />
               </div>
-              <h3>furniture cleaning</h3>
             </div>
-
-            <div
-              class="services-item ps-items"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="100"
-            >
-              <div class="img-box">
-                <a href="#"><img src="images/kitchen1.webp" loading="lazy" alt="kitchen" /></a>
+            <div class="service-home-details">
+              <div class="service-home-details-text">
+                <p class="car-text" data-aos="fade-up" data-aos-duration="1000">
+                  We give your car the care it deserves with our Premium Car
+                  Cleaning Service. Our team of specialists uses high-quality,
+                  eco-friendly products to ensure your vehicle looks as good as
+                  new. From interior detailing to exterior washing, we leave no
+                  spot untouched. Enjoy a spotless finish, fresh interiors, and
+                  the pleasure of driving a clean car. Discover our bespoke
+                  packages that cater to all your car cleaning needs!
+                </p>
               </div>
-              <h3>Kitchen cleaning</h3>
-            </div>
-
-            <div
-              class="services-item ps-items"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="100"
-            >
-              <div class="img-box">
-                <a href="car-service.html"
-                  ><img src="images/car.webp" loading="lazy" alt="car"
-                /></a>
+              <div class="rating-price-info">
+                <div class="rating-info">
+                  <p
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="100"
+                  >
+                    Rating
+                  </p>
+                  <div
+                    class="rating-star"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="100"
+                  >
+                    <h5>3.9</h5>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                </div>
+                <div class="price-info">
+                  <div class="main-price-info">
+                    <p
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      data-aos-delay="200"
+                    >
+                      Price
+                    </p>
+                    <h5
+                      class="price-info-value"
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      data-aos-delay="200"
+                    >
+                      $120
+                      <span>(Per worker)</span>
+                    </h5>
+                  </div>
+                </div>
               </div>
-              <h3>car cleaning</h3>
-            </div>
-
-            <div
-              class="services-item ps-items"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="100"
-            >
-              <div class="img-box">
-                <a href="bathroom-service.html"
-                  ><img src="images/bathroom.webp" loading="lazy" alt="bathroom"
-                /></a>
-              </div>
-              <h3>bathroom cleaning</h3>
             </div>
 
             <div class="service-home-text">
-              <form action="./standard-service.php" method="POST">
+              <form action="./service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
-                  Purchase Plan :
+                  Purchase Service :
                 </h2>
 
                 <div class="form-container">
@@ -221,7 +243,7 @@
                       >
                       <input
                         type="text"
-                        value="Furniture,Kitchen,Car,Bathroom Cleaning"
+                        value="Car Cleaning"
                         name="service"
                         id=""
                         readonly
@@ -327,9 +349,9 @@
                       >
                       <input
                         type="text"
-                        name="workers"
-                        value="12"
+                        value="3"
                         id="default"
+                        name="workers"
                         readonly
                         data-aos="fade-up"
                         data-aos-duration="1000"
@@ -352,6 +374,9 @@
                         data-aos-delay="400"
                       >
                         <option value="noneValue">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6">6</option>
@@ -412,7 +437,7 @@
                       type="text"
                       name="prices"
                       id="main-price"
-                      value="$1390"
+                      value="$360"
                       readonly
                       data-aos="fade-up"
                       data-aos-duration="1000"
@@ -438,7 +463,12 @@
                   </p> </label
                 ><br />
 
-                <input type="submit" name="submit" value="Continue" class="btn buy" onclick="standardRedirect()"/>
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Buy now"
+                  class="btn buy"
+                />
               </form>
             </div>
           </div>
@@ -466,7 +496,7 @@
       </div>
     </div>
 
-    <!----------- style switcher ---------->
+    <!----- styel-switcher  ----->
 
     <div class="style-switcher js-style-switcher">
       <button
@@ -499,8 +529,25 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
     <script src="aos.js"></script>
-    <script src="standard.js"></script>
+    <script src="script.js"></script>
+    <script src="service.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let index = 0;
+        const slides = document.querySelectorAll(".slider img");
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+          index = (index + 1) % totalSlides;
+          document.querySelector(".slider").style.transform = `translateX(-${
+            index * 100
+          }%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+      });
+    </script>
   </body>
 </html>

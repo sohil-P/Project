@@ -4,42 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="CodeFiles/style.css">
+    <link rel="stylesheet" href="\code-files/style.css" />
+    <link rel="stylesheet" href="\code-file/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 20px;
+      .dashboard .container {
+        height: 50vh;
+        overflow: hidden;
       }
-
-      .container {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
       h1,
       h2 {
         color: #333;
       }
 
-      button {
+      .grid {
+        /* background-color: red; */
+        padding: 20px;
+        margin-top: 30px;
+      }
+      .dashboard-content {
+        grid-column: span 12;
+        background: var(--bg-color);
+        box-shadow: var(--shadow);
+        padding: 10px 20px;
+      }
+      .dashboard-btn {
         padding: 10px 15px;
-        margin: 10px 0;
+        margin: 20px 8px;
         border: none;
+        border: 1px solid var(--border-color);
         border-radius: 5px;
-        background-color: #007bff;
-        color: white;
+        background-color: var(--main-color);
+        color: var(--text-light-gray);
         cursor: pointer;
+        transition: 0.3s;
       }
 
       button:hover {
-        background-color: #0056b3;
+        background-color: var(--bg-color);
+        color: var(--txt-x-dark-gray);
       }
 
       table {
@@ -66,15 +72,17 @@
     </style>
   </head>
   <body>
-    <div class="preloader js-preloader">
+    <!-- <div class="preloader js-preloader">
       <div></div>
-    </div>
+    </div> -->
 
     <div class="page-wrapper">
       <header class="header js-header">
         <div class="container">
           <div class="logo" data-aos="fade-down" data-aos-duration="1000">
-            <a href="#">BrightWave <span>Cleaners</span></a>
+            <a href="\code-files/index.html"
+              >BrightWave <span>Cleaners</span></a
+            >
           </div>
           <button
             type="button"
@@ -86,26 +94,88 @@
           </button>
           <nav class="nav js-nav">
             <ul data-aos="fade-down" data-aos-duration="1000">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+              <li><a href="\code-files/index.html#home">Home</a></li>
+              <li><a href="\code-files/index.html#about">About</a></li>
+              <li><a href="\code-files/index.html#services">Services</a></li>
+              <li><a href="\code-files/index.html#pricing">Pricing</a></li>
+              <li><a href="\code-files/index.html#team">Team</a></li>
+              <li><a href="\code-files/index.html#contact">Contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <div class="container">
-        <h1>Admin Dashboard</h1>
-        <button id="showAdmin">Show Admin</button>
-        <button id="showUser">Show User</button>
-        <button id="showBookService">Show BookService</button>
-        <button id="showService">Show Feedback-Details</button>
-        <div id="dataContainer" style="display: contents"></div>
-        <div id="detailsContainer"></div>
+      <section class="dashboard section-padding" id="dashboard">
+        <div class="container">
+          <div class="grid">
+            <div class="dashboard-content">
+              <h1>Admin Dashboard</h1>
+              <button id="showAdmin" class="dashboard-btn">Show Admin</button>
+              <button id="showUser" class="dashboard-btn">Show User</button>
+              <button id="showBookService" class="dashboard-btn">
+                Show BookService
+              </button>
+              <button id="showService" class="dashboard-btn">
+                Show Feedback-Details
+              </button>
+              <div id="dataContainer" style="display: contents"></div>
+              <div id="detailsContainer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!----- footer  ----->
+
+      <div class="footer">
+        <div class="container">
+          <h3>follow us</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/profile.php?id=100084174810296"
+              title="facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sohil_.17/" title="instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" title="youtube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----- styel-switcher  ----->
+
+    <div class="style-switcher js-style-switcher">
+      <button
+        type="button"
+        class="style-switcher-toggler js-style-switcher-toggler"
+      >
+        <i class="fas fa-cog"></i>
+      </button>
+      <div class="style-switcher-main">
+        <h2>style switcher</h2>
+        <div class="style-switcher-item">
+          <p>Theme Color</p>
+          <div class="theme-color">
+            <input
+              type="range"
+              min="0"
+              max="360"
+              class="hue-slider js-hue-slider"
+            />
+            <div class="hue">Hue:<span class="js-hue"></span></div>
+          </div>
+        </div>
+        <div class="style-switcher-item">
+          <label class="form-switch">
+            <span>Dark Mode</span>
+            <input type="checkbox" class="js-dark-mode" />
+            <div class="box"></div>
+          </label>
+        </div>
       </div>
     </div>
 
@@ -204,5 +274,9 @@
         });
 
     </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/code-file/script.js"></script>
+    <script src="/code-file/aos.js"></script>
   </body>
 </html>
