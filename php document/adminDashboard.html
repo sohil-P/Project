@@ -1,124 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="CodeFiles/style.css">
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-h1, h2 {
-    color: #333;
-}
+      h1,
+      h2 {
+        color: #333;
+      }
 
-button {
-    padding: 10px 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-}
+      button {
+        padding: 10px 15px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
 
-button:hover {
-    background-color: #0056b3;
-}
+      button:hover {
+        background-color: #0056b3;
+      }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
 
-table, th, td {
-    border: 1px solid #ddd;
-}
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
 
-th, td {
-    padding: 8px;
-    text-align: left;
-}
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
 
-th {
-    background-color: #f2f2f2;
-}
+      th {
+        background-color: #f2f2f2;
+      }
     </style>
-</head>
-<body>
-    <div class="container">
+  </head>
+  <body>
+    <div class="preloader js-preloader">
+      <div></div>
+    </div>
+
+    <div class="page-wrapper">
+      <header class="header js-header">
+        <div class="container">
+          <div class="logo" data-aos="fade-down" data-aos-duration="1000">
+            <a href="#">BrightWave <span>Cleaners</span></a>
+          </div>
+          <button
+            type="button"
+            class="nav-toggler js-nav-toggler"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+          >
+            <span></span>
+          </button>
+          <nav class="nav js-nav">
+            <ul data-aos="fade-down" data-aos-duration="1000">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div class="container">
         <h1>Admin Dashboard</h1>
         <button id="showAdmin">Show Admin</button>
         <button id="showUser">Show User</button>
         <button id="showBookService">Show BookService</button>
         <button id="showService">Show Feedback-Details</button>
-        <div id="dataContainer" style="display:contents;"></div>
+        <div id="dataContainer" style="display: contents"></div>
         <div id="detailsContainer"></div>
+      </div>
     </div>
 
-
     <script>
-        document.getElementById("showAdmin").addEventListener("click", function() {
-            fetchData('adminlogin.php');
+      document
+        .getElementById("showAdmin")
+        .addEventListener("click", function () {
+          fetchData("adminlogin.php");
         });
 
-        document.getElementById("showUser").addEventListener("click", function() {
-            fetchData('showUser.php');
+      document
+        .getElementById("showUser")
+        .addEventListener("click", function () {
+          fetchData("showUser.php");
         });
 
-        document.getElementById("showBookService").addEventListener("click", function(){
-            fetchData('admindashboard.php');
+      document
+        .getElementById("showBookService")
+        .addEventListener("click", function () {
+          fetchData("admindashboard.php");
         });
 
-        document.getElementById("showService").addEventListener("click", function(){
-            fetchData('showFeedback.php');
+      document
+        .getElementById("showService")
+        .addEventListener("click", function () {
+          fetchData("showFeedback.php");
         });
 
-        function fetchData(url) {
-            $.ajax({
-                url: url,
-                method: 'GET',
-                success: function(data) {
-                    $('#dataContainer').html(data);
-                    // $('#dataContainer').show();
-                    // $('#detailsContainer').hide();
-                },
-                error: function() {
-                    $('#dataContainer').html('<p>An error has occurred</p>');
-                }
-            });
-        }
+      function fetchData(url) {
+        $.ajax({
+          url: url,
+          method: "GET",
+          success: function (data) {
+            $("#dataContainer").html(data);
+            // $('#dataContainer').show();
+            // $('#detailsContainer').hide();
+          },
+          error: function () {
+            $("#dataContainer").html("<p>An error has occurred</p>");
+          },
+        });
+      }
 
-        function fetchDetails(url) {
-            $.ajax({
-                url: url,
-                method: 'GET',
-                success: function(data) {
-                    $('#detailsContainer').html(data);
-                    // $('#dataContainer').hide();
-                    // $('#detailsContainer').show();
-                },
-                error: function() {
-                    $('#detailsContainer').html('<p>An error has occurred</p>');
-                }
-            });
-        }
+      function fetchDetails(url) {
+        $.ajax({
+          url: url,
+          method: "GET",
+          success: function (data) {
+            $("#detailsContainer").html(data);
+            // $('#dataContainer').hide();
+            // $('#detailsContainer').show();
+          },
+          error: function () {
+            $("#detailsContainer").html("<p>An error has occurred</p>");
+          },
+        });
+      }
     </script>
 
     <!-- <script>
@@ -160,5 +204,5 @@ th {
         });
 
     </script> -->
-</body>
+  </body>
 </html>
