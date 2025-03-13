@@ -11,10 +11,11 @@ echo "<th>Password</th>";
 
 
 foreach($result as $student){
-    echo "<tr>
-    <td>{student['A_ID']}</td>
-    <td>{student['AdminName']}</td>
-    <td>{student['Password']}</td>
-    </tr>";
+    echo "<tr>";
+    echo "<td>".$student['A_ID']."</td>";
+    echo "<td>".$student['AdminName']."</td>";
+    echo "<td>".$student['Password']."</td>";
+   
+    echo "</tr>";
 }
 ?>

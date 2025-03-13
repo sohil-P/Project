@@ -14,7 +14,7 @@ if(isset($_POST['login'])){
         session_start();
         $row=$result->fetch_assoc();
         $_SESSION['username']=$row['username'];
-        header("location:./php document/adminDashboard.html");
+        header("location:./php-document/adminDashboard.html");
         exit();
     }
     else{

@@ -7,8 +7,7 @@ document.getElementById("showUser").addEventListener("click", function () {
 });
 
 document
-  .getElementById("showBookService")
-  .addEventListener("click", function () {
+  .getElementById("showBookService") .addEventListener("click", function () {
     fetchData("admindashboard.php");
   });
 
@@ -37,8 +36,8 @@ function fetchDetails(url) {
     method: "GET",
     success: function (data) {
       $("#detailsContainer").html(data);
-      // $('#dataContainer').hide();
       // $('#detailsContainer').show();
+      //  $('#dataContainer').hide();
     },
     error: function () {
       $("#detailsContainer").html("<p>An error has occurred</p>");
