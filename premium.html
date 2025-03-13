@@ -3,14 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BrightWave Cleaners Service</title>
-    <link rel="stylesheet" href="service.css" />
+    <title>Payments Premium</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="aos.css" />
+    <link rel="stylesheet" href="service.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="aos.css" />
+
+    <style>
+      .ps-items {
+        margin-top: 30px;
+      }
+      .service-home-text {
+        margin-top: 50px;
+      }
+      #checkbox {
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+      }
+    </style>
   </head>
   <body>
     <div class="preloader js-preloader">
@@ -47,100 +61,172 @@
 
       <section class="service-home" id="service-home">
         <div class="container">
-          <div class="grid service-grid">
-            <div class="slider-container">
-              <h2
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="200"
-              >
-                Furniture Cleaning
-              </h2>
-              <div class="slider" data-aos="fade-up" data-aos-duration="1000">
-                <img
-                  src="\images/furniture-1.webp"
-                  loading="lazy"
-                  alt="Furniture Cleaning 1"
-                />
-                <img
-                  src="\images/furniture-2.webp"
-                  loading="lazy"
-                  alt="Furniture Cleaning 2"
-                />
-                <img
-                  src="\images/furniture-3.webp"
-                  loading="lazy"
-                  alt="Furniture Cleaning 3"
-                />
+          <div class="grid">
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              <div class="img-box">
+                <a href="furniture-service.html"
+                  ><img
+                    src="images/furniture.webp"
+                    loading="lazy"
+                    alt="furniture"
+                /></a>
               </div>
+              <input type="checkbox" id="checkbox1" onchange="updateValue()" />
+              <h3>furniture cleaning</h3>
             </div>
-            <div class="service-home-details">
-              <div class="service-home-details-text">
-                <p
-                  class="furniture-text"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                >
-                  Bring new life to your furniture with our professional
-                  cleaning service. We use advanced techniques and eco-friendly
-                  products to deep clean and rejuvenate your sofas, chairs, and
-                  other upholstered items. Our skilled technicians ensure that
-                  every piece of furniture is free from dirt, stains, and
-                  allergens, leaving them looking and feeling fresh. Enjoy a
-                  cleaner, healthier home with our top-quality furniture
-                  cleaning service!
-                </p>
+
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img src="images/kitchen1.webp" loading="lazy" alt="kitchen"
+                /></a>
               </div>
-              <div class="rating-price-info">
-                <div class="rating-info">
-                  <p
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="100"
-                  >
-                    Rating
-                  </p>
-                  <div
-                    class="rating-star"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="100"
-                  >
-                    <h5>4.0</h5>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                  </div>
-                </div>
-                <div class="price-info">
-                  <div class="main-price-info">
-                    <p
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="200"
-                    >
-                      Price
-                    </p>
-                    <h5
-                      class="price-info-value"
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="200"
-                    >
-                      $120
-                      <span>(Per worker)</span>
-                    </h5>
-                  </div>
-                </div>
+              <input type="checkbox" id="checkbox2" onchange="updateValue()" />
+              <h3>Kitchen cleaning</h3>
+            </div>
+
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="car-service.html"
+                  ><img src="images/car.webp" loading="lazy" alt="car"
+                /></a>
               </div>
+              <input type="checkbox" id="checkbox3" onchange="updateValue()" />
+              <h3>car cleaning</h3>
+            </div>
+
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="bathroom-service.html"
+                  ><img
+                    src="images/bathroom.webp"
+                    loading="lazy"
+                    alt="bathroom"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox4" onchange="updateValue()" />
+              <h3>bathroom cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="window-service.html"
+                  ><img src="images/window.webp" loading="lazy" alt="window"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox5" onchange="updateValue()" />
+              <h3>window cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="carpet-service.html"
+                  ><img src="images/house.webp" loading="lazy" alt="carpet"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox6" onchange="updateValue()" />
+              <h3>carpet cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img
+                    src="images/office cleaning.webp"
+                    loading="lazy"
+                    alt="office"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox7" onchange="updateValue()" />
+              <h3>office cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img
+                    src="images/medical-cleaning.webp"
+                    loading="lazy"
+                    alt="medical"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox8" onchange="updateValue()" />
+              <h3>medical cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img
+                    src="images/restaurant-clean.webp"
+                    loading="lazy"
+                    alt="restaurant"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox9" onchange="updateValue()" />
+              <h3>restaurant cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img
+                    src="images/event-cleaning.webp"
+                    loading="lazy"
+                    alt="event"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox10" onchange="updateValue()" />
+              <h3>event cleaning</h3>
             </div>
 
             <div class="service-home-text">
-              <form action="./service.php" method="POST">
+              <form action="./premium-service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
-                  Purchase Service :
+                  Purchase Plan :
                 </h2>
 
                 <div class="form-container">
@@ -248,9 +334,9 @@
                       >
                       <input
                         type="text"
-                        value="Furniture Cleaning"
+                        value="All services"
                         name="service"
-                        id=""
+                        id="myTextbox"
                         readonly
                         required
                         data-aos="fade-up"
@@ -340,7 +426,9 @@
                     >
                       <option value="male">Male</option>
                       <option value="female">Female</option>
-                      <option value="combine(male & female)">Combines(Male and Female)</option>
+                      <option value="combine(male & female)">
+                        Combines(Male and Female)
+                      </option>
                     </select>
 
                     <div class="worker-count">
@@ -355,7 +443,7 @@
                       <input
                         type="text"
                         name="workers"
-                        value="3"
+                        value="18"
                         id="default"
                         readonly
                         data-aos="fade-up"
@@ -371,7 +459,6 @@
                         >Select Customize Worker</label
                       >
                       <select
-                       
                         id="workers-numbers"
                         required
                         data-aos="fade-up"
@@ -379,15 +466,6 @@
                         data-aos-delay="400"
                       >
                         <option value="noneValue">None</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
@@ -442,7 +520,7 @@
                       type="text"
                       name="prices"
                       id="main-price"
-                      value="$360"
+                      value="$2080"
                       readonly
                       data-aos="fade-up"
                       data-aos-duration="1000"
@@ -473,7 +551,6 @@
                   name="submit"
                   value="Continue"
                   class="btn buy"
-                  onclick="serviceRedirect()"
                 />
               </form>
             </div>
@@ -502,7 +579,7 @@
       </div>
     </div>
 
-    <!----- styel-switcher  ----->
+    <!----------- style switcher ---------->
 
     <div class="style-switcher js-style-switcher">
       <button
@@ -535,8 +612,57 @@
       </div>
     </div>
 
-    <script src="aos.js"></script>
     <script src="script.js"></script>
-    <script src="service.js"></script>
+    <script src="aos.js"></script>
+    <script src="premium.js"></script>
+    <script>
+      function updateValue() {
+        var checkbox1 = document.getElementById("checkbox1");
+        var checkbox2 = document.getElementById("checkbox2");
+        var checkbox3 = document.getElementById("checkbox3");
+        var checkbox4 = document.getElementById("checkbox4");
+        var checkbox5 = document.getElementById("checkbox5");
+        var checkbox6 = document.getElementById("checkbox6");
+        var checkbox7 = document.getElementById("checkbox7");
+        var checkbox8 = document.getElementById("checkbox8");
+        var checkbox9 = document.getElementById("checkbox9");
+        var checkbox10 = document.getElementById("checkbox10");
+        var textbox = document.getElementById("myTextbox");
+
+        var selectedOptions = [];
+
+        if (checkbox1.checked) {
+          selectedOptions.push("Furniture Cleaning");
+        }
+        if (checkbox2.checked) {
+          selectedOptions.push("Kitchen Cleaning");
+        }
+        if (checkbox3.checked) {
+          selectedOptions.push("Car Cleaning");
+        }
+        if (checkbox4.checked) {
+          selectedOptions.push("Bathroom Cleaning");
+        }
+        if (checkbox5.checked) {
+          selectedOptions.push("Window Cleaning");
+        }
+        if (checkbox6.checked) {
+          selectedOptions.push("Carpet Cleaning");
+        }
+        if (checkbox7.checked) {
+          selectedOptions.push("Office Cleaning");
+        }
+        if (checkbox8.checked) {
+          selectedOptions.push("Medical Cleaning");
+        }
+        if (checkbox9.checked) {
+          selectedOptions.push("Resturant Cleaning");
+        }
+        if (checkbox10.checked) {
+          selectedOptions.push("Event Cleaning");
+        }
+        textbox.value = selectedOptions.join(",");
+      }
+    </script>
   </body>
 </html>

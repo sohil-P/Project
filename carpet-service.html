@@ -54,40 +54,40 @@
                 data-aos-duration="1000"
                 data-aos-delay="200"
               >
-                Bathroom Cleaning
+                Carpet Cleaning
               </h2>
               <div class="slider" data-aos="fade-up" data-aos-duration="1000">
                 <img
-                  src="\images/bathroom-1.webp"
+                  src="images/carpet-1.webp"
                   loading="lazy"
-                  alt="Bathroom Cleaning 1"
+                  alt="Carpet Cleaning 1"
                 />
                 <img
-                  src="\images/bathroom-2.webp"
+                  src="images/carpet-2.webp"
                   loading="lazy"
-                  alt="Bathroom Cleaning 3"
+                  alt="Carpet Cleaning 2"
                 />
                 <img
-                  src="\images/bathroom-3.webp"
+                  src="images/carpet-3.webp"
                   loading="lazy"
-                  alt="Bathroom Cleaning 2"
+                  alt="Carpet Cleaning 3"
                 />
               </div>
             </div>
             <div class="service-home-details">
               <div class="service-home-details-text">
                 <p
-                  class="bathroom-text"
+                  class="carpet-text"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
-                  Transform your bathroom into a sparkling sanctuary with our
-                  professional cleaning service. We use high-quality,
-                  eco-friendly products to eliminate grime, soap scum, and mold,
-                  ensuring every corner is immaculate. Our dedicated team pays
-                  attention to detail, leaving your bathroom hygienic, fresh,
-                  and gleaming. Enjoy a pristine bathroom and a healthier living
-                  space with our expert cleaning service!
+                  Transform your home with our professional carpet cleaning
+                  service. We use state-of-the-art equipment and eco-friendly
+                  products to remove dirt, stains, and allergens, leaving your
+                  carpets looking and feeling like new. Our skilled technicians
+                  are dedicated to providing top-notch service and ensuring
+                  customer satisfaction. Say goodbye to stubborn stains and
+                  hello to fresh, clean carpets!
                 </p>
               </div>
               <div class="rating-price-info">
@@ -114,7 +114,12 @@
                   </div>
                 </div>
                 <div class="price-info">
-                  <div class="main-price-info">
+                  <div
+                    class="main-price-info"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="100"
+                  >
                     <p
                       data-aos="fade-up"
                       data-aos-duration="1000"
@@ -135,8 +140,9 @@
                 </div>
               </div>
             </div>
+
             <div class="service-home-text">
-              <form action="./service.php" method="POST">
+              <form action="service.php" method="POST">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
                   Purchase Service :
                 </h2>
@@ -144,7 +150,7 @@
                 <div class="form-container">
                   <div class="personal-detail">
                     <h3 data-aos="fade-up" data-aos-duration="1000">
-                      Personal Details
+                      1. Personal Details
                     </h3>
                     <input
                       type="text"
@@ -184,7 +190,7 @@
                       data-aos-duration="1000"
                       data-aos-delay="200"
                     >
-                      Address Details
+                      2. Address Details
                     </h3>
                     <input
                       type="text"
@@ -234,7 +240,7 @@
                       data-aos-duration="1000"
                       data-aos-delay="300"
                     >
-                      Service Details
+                      3. Service Details
                     </h3>
                     <div class="service-type">
                       <label
@@ -246,7 +252,7 @@
                       >
                       <input
                         type="text"
-                        value="Bathroom Cleaning"
+                        value="Carpet Cleaning"
                         name="service"
                         id=""
                         readonly
@@ -319,7 +325,7 @@
                       data-aos-duration="1000"
                       data-aos-delay="400"
                     >
-                      Worker Information
+                      4. Worker Information
                     </h3>
                     <label
                       for="worker_group"
@@ -336,11 +342,9 @@
                       data-aos-duration="1000"
                       data-aos-delay="400"
                     >
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Combines(male & female)">
-                        Combines(Male and Female)
-                      </option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="combine(male & female)">Combines(Male and Female)</option>
                     </select>
 
                     <div class="worker-count">
@@ -356,9 +360,8 @@
                         type="text"
                         value="3"
                         name="workers"
-                        readonly
                         id="default"
-                        
+                        readonly
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay="400"
@@ -372,7 +375,7 @@
                         >Select Customize Worker</label
                       >
                       <select
-                      
+                       
                         id="workers-numbers"
                         required
                         data-aos="fade-up"
@@ -436,7 +439,7 @@
                       for="price"
                       data-aos="fade-up"
                       data-aos-duration="1000"
-                      data-aos-delay="500"
+                      data-aos-delay="400"
                       >Price</label
                     >
                     <input
@@ -447,7 +450,7 @@
                       readonly
                       data-aos="fade-up"
                       data-aos-duration="1000"
-                      data-aos-delay="500"
+                      data-aos-delay="400"
                     />
                   </div>
                 </div>
