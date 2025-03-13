@@ -12,7 +12,7 @@
 // if ($conn->connect_error) {
 //     die("Connection failed: " . $conn->connect_error);
 // }
-include("./connection.php");
+include("connection.php");
 $students = $conn->prepare("SELECT * FROM booking_details");
 $students->execute();
 $result=$students->fetchAll();
