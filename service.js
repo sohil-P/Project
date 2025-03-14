@@ -66,5 +66,18 @@ frequency.addEventListener("change", calculatePrice);
 quantitySelect.addEventListener("change", calculatePrice);
 
 function serviceRedirect() {
-  window.location.href = "carpet-payment.html";
+  let continueBtn = document.getElementById("continueBtn");
+  let fullName = document.getElementById("fullName").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+
+  continueBtn.addEventListener("click", () => {
+    if (fullName === "" || email === "" || phone === "") {
+      alert("Please fill all the required fields before proceeding");
+      return false;
+    } else {
+      window.location.href = "carpet-payment.html";
+    }
+  });
 }
+serviceRedirect();
