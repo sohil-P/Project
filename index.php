@@ -40,9 +40,24 @@
               <li><a href="#team">Team</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+              <div class="profile" id="profile">
+                <i class="fas fa-user"></i>
+                <span id="username"><?php
+                  session_start();
+                  $username = $_SESSION['username'];
+                  if($username == null){
+                    echo "Guest";
+                  }
+                  else{
+                    echo htmlspecialchars($username);
+                  }
+                 ?></span>
+              </div>
             </ul>
+            
           </nav>
         </div>
+        
       </header>
 
       <!----- home ----->
@@ -171,7 +186,7 @@
               data-aos-duration="600"
             >
               <div class="img-box">
-                <a href="carpet-service.html"
+                <a href="carpet-service.html" onclick="requireLogin(event)"
                   ><img src="images/house.webp" loading="lazy" alt="carpet"
                 /></a>
               </div>
@@ -185,7 +200,7 @@
               data-aos-delay="100"
             >
               <div class="img-box">
-                <a href="window-service.html"
+                <a href="window-service.html" onclick="requireLogin(event)"
                   ><img src="images/window.webp" loading="lazy" alt="window"
                 /></a>
               </div>
@@ -199,7 +214,7 @@
               data-aos-delay="200"
             >
               <div class="img-box">
-                <a href="bathroom-service.html"
+                <a href="bathroom-service.html" onclick="requireLogin(event)"
                   ><img src="images/bathroom.webp" loading="lazy" alt="bathroom"
                 /></a>
               </div>
@@ -213,7 +228,7 @@
               data-aos-delay="300"
             >
               <div class="img-box">
-                <a href="furniture-service.html"
+                <a href="furniture-service.html" onclick="requireLogin(event)"
                   ><img src="images/furniture.webp" loading="lazy" alt="furniture"
                 /></a>
               </div>
@@ -261,7 +276,7 @@
                 </ul>
               </div>
               <div class="pricing-footer">
-                <a href="basic.html" class="btn getBtn1">get started</a>
+                <a href="basic.html" class="btn getBtn1" onclick="requireLogin(event)">get started</a>
               </div>
             </div>
 
@@ -291,7 +306,7 @@
                 </ul>
               </div>
               <div class="pricing-footer">
-                <a href="standard.html" class="btn getBtn2">get started</a>
+                <a href="standard.html" class="btn getBtn2" onclick="requireLogin(event)">get started</a>
               </div>
             </div>
 
@@ -321,7 +336,7 @@
                 </ul>
               </div>
               <div class="pricing-footer">
-                <a href="premium.html" class="btn getBtn3">get started</a>
+                <a href="premium.html" class="btn getBtn3" onclick="requireLogin(event)">get started</a>
               </div>
             </div>
           </div>

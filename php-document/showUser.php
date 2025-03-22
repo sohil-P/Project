@@ -1,8 +1,8 @@
 <?php
 include("./connection.php");
-$students = $conn->prepare("SELECT * FROM user_registration ");
-$students->execute();
-$result=$students->fetchAll();
+$selectQuery = $conn->prepare("SELECT * FROM user_registration ");
+$selectQuery->execute();
+$result=$selectQuery->fetchAll();
 
 echo "<table border='1'>";
 echo "<th>U_ID</th>";
@@ -12,18 +12,18 @@ echo "<th>Password</th>";
 echo "<th>Date</th>";
 
 
-foreach($result as $student){
+foreach($result as $row){
    
     echo "<tr>.
-    <td>".$student['U_ID']."</td>
-    <td>".$student['Username']."</td>
-    <td>".$student['Email']."</td>
-    <td>".$student['Password']."</td>
-    <td>".$student['Date']."</td>
+    <td>".$row['U_ID']."</td>
+    <td>".$row['Username']."</td>
+    <td>".$row['Email']."</td>
+    <td>".$row['Password']."</td>
+    <td>".$row['Date']."</td>
     
 
     <td><form method='post'>
-     <button name='delete' value=".$student['U_ID'].">DELETE</button>
+     <button name='delete' value=".$row['U_ID'].">DELETE</button>
     </form></td>
    
     </tr>";
@@ -32,9 +32,9 @@ echo "</table>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
-    $students = $conn->prepare("DELETE  FROM user_registration WHERE U_ID='$id' ");
+    $deleteQury = $conn->prepare("DELETE  FROM user_registration WHERE U_ID='$id' ");
     
-    if($students->execute()){
+    if($deleteQury->execute()){
         echo "Record Deleted..";
           header("Refresh:1");
     }

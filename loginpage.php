@@ -1,5 +1,6 @@
 <?php
  include('./config.php');
+ session_start();
  if(isset($_POST['signup'])){
     $Username = $_POST['UName'];
    
@@ -25,7 +26,7 @@
        else{
       //   header("location:./login.html");
         echo "<script>
-        alert('Error:.$conn->error')
+        alert('Error:".$conn->error."');
         window.location.href='login.html'
         </script>";
        }
@@ -42,10 +43,17 @@
     if($result->num_rows>0 ){
         $sql ="INSERT INTO user_login(Email,Password, Date) VALUES ('$email','$password', Now())";
         $conn->query($sql);
-        session_start();
+      //   session_start();
         $row=$result->fetch_assoc();
-        $_SESSION['email']=$row['email'];
-        header("location:./index.html");
+      //   $_SESSION['email']=$row['email'];
+        $_SESSION['user_id']=$row['U_ID'];
+        $_SESSION['username']=$row['Username'];
+        echo "<script>
+         localStorage.setItem(userLoggedIn, 'true');
+         localStorage.setItem('username', {$row['Username']}');
+          window.location.href='index.php';
+        </script>";
+        // header("location:./index.php");
         exit();
     }
     else{

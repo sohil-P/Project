@@ -6,9 +6,9 @@ include("./connection.php");
 // else{
 //     $id=0;
 // }
-$students = $conn->prepare("SELECT * FROM `feedback-details`  ");
-$students->execute();
-$result=$students->fetchAll();
+$selectQuery = $conn->prepare("SELECT * FROM `feedback-details`  ");
+$selectQuery->execute();
+$result=$selectQuery->fetchAll();
 echo "<table border='1'>";
 echo "<th>F_ID</th>";
 echo "<th>Name</th>";
@@ -18,18 +18,18 @@ echo "<th>Message</th>";
     
 
 
-foreach($result as $student){
+foreach($result as $row){
    
     echo "<tr>.
-    <td>".$student['F_ID']."</td>
-    <td>".$student['Name']."</td>
-    <td>".$student['Address']."</td>
-    <td>".$student['MobileNo']."</td>
-    <td>".$student['Message']."</td>
+    <td>".$row['F_ID']."</td>
+    <td>".$row['Name']."</td>
+    <td>".$row['Address']."</td>
+    <td>".$row['MobileNo']."</td>
+    <td>".$row['Message']."</td>
   
 
     <td><form method='post'>
-     <button name='delete' value=".$student['F_ID'].">DELETE</button>
+     <button name='delete' value=".$row['F_ID'].">DELETE</button>
     </form></td>
    
     </tr>";
@@ -38,9 +38,9 @@ echo "</table>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
-    $students = $conn->prepare("DELETE  FROM feedback-details WHERE F_ID='$id' ");
+    $deleteQury = $conn->prepare("DELETE  FROM feedback-details WHERE F_ID='$id' ");
     
-    if($students->execute()){
+    if($deleteQuery->execute()){
         echo "Record Deleted..";
           header("Refresh:1");
     }

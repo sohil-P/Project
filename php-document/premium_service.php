@@ -6,9 +6,9 @@ if(isset($_GET['id'])){
 else{
     $id=0;
 }
-$students = $conn->prepare("SELECT * FROM `premium_service` WHERE PS_ID='$id'  ");
-$students->execute();
-$result=$students->fetchAll();
+$selectQuery = $conn->prepare("SELECT * FROM `premium_service` WHERE PS_ID='$id'  ");
+$selectQuery->execute();
+$result=$selectQuery->fetchAll();
 echo "<table border='1'>";
 echo "<th>PS_ID</th>";
 echo "<th>PSName</th>";
@@ -20,21 +20,21 @@ echo "<th>Worker Group</th>";
 echo "<th>Workers</th>";     
 
 
-foreach($result as $student){
+foreach($result as $row){
    
     echo "<tr>.
-    <td>".$student['PS_ID']."</td>
-    <td>".$student['PSName']."</td>
-    <td>".$student['Frequency']."</td>
-    <td>".$student['Date']."</td>
-    <td>".$student['Time']."</td>
-    <td>".$student['Price']."</td>
-    <td>".$student['Worker Group']."</td>
-    <td>".$student['Workers']."</td>
+    <td>".$row['PS_ID']."</td>
+    <td>".$row['PSName']."</td>
+    <td>".$row['Frequency']."</td>
+    <td>".$row['Date']."</td>
+    <td>".$row['Time']."</td>
+    <td>".$row['Price']."</td>
+    <td>".$row['Worker Group']."</td>
+    <td>".$row['Workers']."</td>
     
 
     <td><form method='post'>
-     <button name='delete' value=".$student['PS_ID'].">DELETE</button>
+     <button name='delete' value=".$row['PS_ID'].">DELETE</button>
     </form></td>
    
     </tr>";
@@ -43,9 +43,9 @@ echo "</table>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
-    $students = $conn->prepare("DELETE  FROM premium_service WHERE PS_ID='$id' ");
+    $deleteQuery = $conn->prepare("DELETE  FROM premium_service WHERE PS_ID='$id' ");
     
-    if($students->execute()){
+    if($deleteQuery->execute()){
         echo "Record Deleted..";
           header("Refresh:1");
     }

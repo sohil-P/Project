@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('./config.php');
 if(isset($_POST['login'])){
     $adminUserName=$_POST['username'];
@@ -13,7 +14,7 @@ if(isset($_POST['login'])){
         // $conn->query($sql);
         session_start();
         $row=$result->fetch_assoc();
-        $_SESSION['username']=$row['username'];
+        $_SESSION['username']=$row['Username'];
         header("location:./php-document/adminDashboard.html");
         exit();
     }

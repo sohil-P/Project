@@ -13,9 +13,9 @@
 //     die("Connection failed: " . $conn->connect_error);
 // }
 include("connection.php");
-$students = $conn->prepare("SELECT * FROM booking_details");
-$students->execute();
-$result=$students->fetchAll();
+$selectQuery = $conn->prepare("SELECT * FROM booking_details");
+$selectQuery->execute();
+$result=$selectQuery->fetchAll();
 
 echo "<table border='1'>";
 echo "<th>B_ID</th>";
@@ -31,23 +31,23 @@ echo "<th>BS_ID</th>";
 echo "<th>SS_ID</th>";
 echo "<th>PS_ID</th>";
 
-foreach($result as $student){
+foreach($result as $row){
    
     echo "<tr>.
-    <td>".$student['B_ID']."</td>
-    <td>".$student['Name']."</td>
-    <td>".$student['Email']."</td>       
-    <td>".$student['MobileNo']."</td>
-    <td>".$student['Address']."</td>
-    <td>".$student['City']."</td>
-    <td>".$student['State']."</td>
-    <td>".$student['Pincode']."</td>
-    <td><a href='#' onclick=\"fetchDetails('showServices.php?id=".$student['S_ID']."')\">".$student['S_ID']."</a></td>
-    <td><a href='#' onclick=\"fetchDetails('basic_service.php?id=".$student['BS_ID']."')\">".$student['BS_ID']."</a></td>
-    <td><a href='#' onclick=\"fetchDetails('standard_service.php?id=".$student['SS_ID']."')\">".$student['SS_ID']."</a></td>
-    <td><a href='#' onclick=\"fetchDetails('premium_service.php?id=".$student['PS_ID']."')\">".$student['PS_ID']."</a></td>
+    <td>".$row['B_ID']."</td>
+    <td>".$row['Name']."</td>
+    <td>".$row['Email']."</td>       
+    <td>".$row['MobileNo']."</td>
+    <td>".$row['Address']."</td>
+    <td>".$row['City']."</td>
+    <td>".$row['State']."</td>
+    <td>".$row['Pincode']."</td>
+    <td><a href='#' onclick=\"fetchDetails('showServices.php?id=".$row['S_ID']."')\">".$row['S_ID']."</a></td>
+    <td><a href='#' onclick=\"fetchDetails('basic_service.php?id=".$row['BS_ID']."')\">".$row['BS_ID']."</a></td>
+    <td><a href='#' onclick=\"fetchDetails('standard_service.php?id=".$row['SS_ID']."')\">".$row['SS_ID']."</a></td>
+    <td><a href='#' onclick=\"fetchDetails('premium_service.php?id=".$row['PS_ID']."')\">".$row['PS_ID']."</a></td>
     <td><form method='post'>
-     <button name='delete' value=".$student['B_ID'].">DELETE</button>
+     <button name='delete' value=".$row['B_ID'].">DELETE</button>
     </form></td>
    
     </tr>";
@@ -57,9 +57,9 @@ echo "<div id='detailsContainer'></div>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
-    $students = $conn->prepare("DELETE  FROM booking_details WHERE B_ID='$id' ");
+    $deleteQuery = $conn->prepare("DELETE  FROM booking_details WHERE B_ID='$id' ");
     
-    if($students->execute()){
+    if($deleteQuery->execute()){
         echo "Record Deleted..";
           header("Refresh:1");
     }

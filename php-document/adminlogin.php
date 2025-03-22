@@ -10,11 +10,11 @@ echo "<th>AdminName</th>";
 echo "<th>Password</th>";
 
 
-foreach($result as $student){
+foreach($result as $row){
     echo "<tr>";
-    echo "<td>".$student['A_ID']."</td>";
-    echo "<td>".$student['AdminName']."</td>";
-    echo "<td>".$student['Password']."</td>";
+    echo "<td>".$row['A_ID']."</td>";
+    echo "<td>".$row['AdminName']."</td>";
+    echo "<td>".$row['Password']."</td>";
    
     echo "</tr>";
 }
