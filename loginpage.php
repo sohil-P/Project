@@ -48,12 +48,12 @@
       //   $_SESSION['email']=$row['email'];
         $_SESSION['user_id']=$row['U_ID'];
         $_SESSION['username']=$row['Username'];
-        echo "<script>
-         localStorage.setItem(userLoggedIn, 'true');
-         localStorage.setItem('username', {$row['Username']}');
-          window.location.href='index.php';
-        </script>";
-        // header("location:./index.php");
+        // echo "<script>
+        //  localStorage.setItem(userLoggedIn, 'true');
+        //  localStorage.setItem('username', '{$row['Username']}');
+        // window.location.href='./index.php';
+        // </script>";
+          header("location:./index.php");
         exit();
     }
     else{
