@@ -31,38 +31,48 @@
           >
             <span></span>
           </button>
-          <nav class="nav js-nav">
-            <ul data-aos="fade-down" data-aos-duration="1000">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
-            </ul>
-          </nav>
-          <div style = "display: flex" class="profile" id="profile">
-            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
-            <span id="username">
-            <?php
+            <nav class="nav js-nav">
+              <ul data-aos="fade-down" data-aos-duration="1000">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="login-btn" id="loginBtn">Login &#8594;</a></li>
+                <li><button style = "color: red;" class = "logout-btn" id = "logoutBtn" onclick = "showLogoutForm()">Logout &#8594;</button></li>
+              </ul>
+            </nav>
+            <!-- Logout Form -->
+            <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
+            <div id="logoutForm">
+                <form action="logout.php" method="POST">
+                  <label for="username">Enter Username to Logout:</label> <br>
+                  <input type="text" name="username" id="username" required>
+                  <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div style="display: flex" class="profile" id="profile">
+             <i style="margin: 10px 10px 0 0" class="fas fa-user"></i>
+             <span id="username">
+             <?php
                if (session_status() == PHP_SESSION_NONE) {
-                 session_start();
+               session_start();
                }
-               // Check if session is not set but cookies are available
-              if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
-                $_SESSION['username'] = $_COOKIE['username']; // Restore session from cookie
-              }
+               if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+               $_SESSION['username'] = $_COOKIE['username'];
+               }
                $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
-               if($username === null){
-                 echo "Guest";
+               if ($username === null) {
+               echo "<h2>Guest</h2>";
+               echo "<script>document.getElementById('logoutBtn').style.display = 'none';</script>";
+               } else {
+               echo "<h2>$username</h2>";
+               echo "<script>document.getElementById('loginBtn').style.display = 'none';</script>";
                }
-               else{
-                 echo "<h2>$username</h2>";
-               }
-            ?>
-            </span>
-          </div>
+             ?>
+             </span>
+            </div>
         </div>
       </header>
 
@@ -556,6 +566,13 @@
       </div>
     </div>
 
+    <script>
+      // Function to show logout form
+      function showLogoutForm() {
+        document.getElementById('logoutForm').style.display = 'block';
+        document.getElementById("logoutForm-overlay").style.display = "block";
+      }
+    </script>
     <script src="aos.js"></script>
     <script src="script.js"></script>
   </body>
