@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +11,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link rel="stylesheet" href="carpet-payment.css" />
+    <link rel="stylesheet" href="payment.css" />
   </head>
   <body>
     <div class="preloader js-preloader">
@@ -45,7 +46,7 @@
         </div>
       </header>
 
-      <form action="../payment.php" method="post">
+      <form action="./payment.php" method="post">
       <section
         class="service-payment-home section-padding"
         id="service-payment-home"
@@ -191,18 +192,18 @@
 
     <script src="script.js"></script>
     <script>
-      const cards = document.querySelector(".card-detail");
-      const payments = document.querySelector(".payment-info-card select");
-      payments.addEventListener("change", (e) => {
-        if (
-          e.target.value === "credit_card" ||
-          e.target.value === "debit_card"
-        ) {
-          cards.classList.remove("card-hidden");
-        } else {
-          cards.classList.add("card-hidden");
-        }
-      });
+      // const cards = document.querySelector(".card-detail");
+      // const payments = document.querySelector(".payment-info-card select");
+      // payments.addEventListener("change", (e) => {
+      //   if (
+      //     e.target.value === "credit_card" ||
+      //     e.target.value === "debit_card"
+      //   ) {
+      //     cards.classList.remove("card-hidden");
+      //   } else {
+      //     cards.classList.add("card-hidden");
+      //   }
+      // });
 
       function showPopup() {
         document.getElementById("popup").style.display = "block";
@@ -210,7 +211,7 @@
       }
 
       function openIndex() {
-        window.location.href = "index.html";
+        window.location.href = "index.php";
       }
 
       // function hidePopup() {
@@ -220,3 +221,4 @@
     </script>
   </body>
 </html>
+

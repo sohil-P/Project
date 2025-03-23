@@ -1,6 +1,5 @@
 <?php
 include_once('./config.php');
-// include_once('./booking.php');
 if(isset($_POST['payment'])){
     $payment_method = $_POST['pay-method'];
     $B_ID = $_GET['b_id']?? '';
@@ -12,8 +11,8 @@ if(isset($_POST['payment'])){
     if($result){
         
         echo "<script>
-        alert('payment success')
-        window.location.href='carpet-payment.html'
+       document.getElementById('popup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
         </script>";
     }
     else{
@@ -56,3 +55,5 @@ if(isset($_POST['payment'])){
         
         
         </script> -->
+       
+       

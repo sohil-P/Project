@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +32,7 @@
           >
             <span></span>
           </button>
+<<<<<<< HEAD
             <nav class="nav js-nav">
               <ul data-aos="fade-down" data-aos-duration="1000">
                 <li><a href="#home">Home</a></li>
@@ -56,12 +58,31 @@
              <i style="margin: 10px 10px 0 0" class="fas fa-user"></i>
              <span id="username">
              <?php
+=======
+          <nav class="nav js-nav">
+            <ul data-aos="fade-down" data-aos-duration="1000">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+              <li><a href="logout.php" class="logout-btn">Logout</a></li>
+            </ul>
+          </nav>
+          <div style = "display: flex" class="profile" id="profile">
+            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
+            <span id="username">
+            <?php 
+>>>>>>> a0cf663fb7f0d4cad2cbff5246a1c95963900e4e
                if (session_status() == PHP_SESSION_NONE) {
                session_start();
                }
                if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
                $_SESSION['username'] = $_COOKIE['username'];
                }
+<<<<<<< HEAD
                $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
                if ($username === null) {
                echo "<h2>Guest</h2>";
@@ -69,6 +90,15 @@
                } else {
                echo "<h2>$username</h2>";
                echo "<script>document.getElementById('loginBtn').style.display = 'none';</script>";
+=======
+               // Check if session is not set but cookies are available
+              if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+                $_SESSION['username'] = $_COOKIE['username']; // Restore session from cookie
+              }
+               $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+               if($username === "Guest"){
+                 echo "<h2>Guest</h2>";
+>>>>>>> a0cf663fb7f0d4cad2cbff5246a1c95963900e4e
                }
              ?>
              </span>
@@ -575,5 +605,15 @@
     </script>
     <script src="aos.js"></script>
     <script src="script.js"></script>
+    <script>
+      function requireLogin(event) {
+    var username = "<?php echo $username; ?>";
+    if (username === "Guest") {
+        event.preventDefault();
+        alert("You must be logged in to purchase a service.");
+        window.location.href = "login.html";
+    }
+}
+    </script>
   </body>
 </html>

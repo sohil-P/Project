@@ -59,7 +59,7 @@
       exit();
     } else {  
       echo "<script>
-      alert('Not found,Incorrect Email or Password')
+      alert('Incorrect Email or Password')
       window.location.href='login.html'
       </script>";
     }

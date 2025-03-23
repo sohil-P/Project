@@ -123,35 +123,39 @@ navigation();
 
 
 
-// check login user
-function isLoggedIn() {
-  // Replace this with your actual login check logic
-  return !!localStorage.getItem('userLoggedIn');
-}
+// // check login user
+// function isLoggedIn() {
+//   // Replace this with your actual login check logic
+//   return !!localStorage.getItem('userLoggedIn');
+// }
 
-function displayUserProfile() {
-  if (isLoggedIn()) {
-    fetch('./profile.php')
-      .then(response => response.json())
-      .then(data => {
-        if (data.username) {
-          document.getElementById('username').textContent = data.username;
-        }
-      })
-      .catch(error => console.error('Error fetching user data:', error));
-  }
-}
+// function displayUserProfile() {
+//   if (isLoggedIn()) {
+//     fetch('./profile.php')
+//       .then(response => response.json())
+//       .then(data => {
+//         if (data.username) {
+//           document.getElementById('username').textContent = data.username;
+//         }
+//       })
+//       .catch(error => console.error('Error fetching user data:', error));
+//   }
+// }
 
-function requireLogin(event) {
-  if (!isLoggedIn()) {
-    event.preventDefault();
-    alert('You must be logged in to purchase a service.');
-    window.location.href = 'login.html';
-  }
-}
+
+
+
+
+// function requireLogin(event) {
+//   if (!isLoggedIn()) {
+//     event.preventDefault();
+//     alert('You must be logged in to purchase a service.');
+//     window.location.href = 'login.html';
+//   }
+// }
 
 // Call displayUserProfile on page load
-document.addEventListener('DOMContentLoaded', displayUserProfile);
+// document.addEventListener('DOMContentLoaded', displayUserProfile);
 
 ///check login status
 // function loginUser(username) {
