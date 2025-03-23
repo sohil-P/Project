@@ -29,12 +29,12 @@ if(isset($_POST['submit'])){
     $B_ID = $stmt->insert_id; // Get the last inserted ID
     $stmt->close();
 
-    include("./payment.php");
+ 
 
     if($result){
         echo "<script>
         alert(' Booking successful. Your Booking ID is :$B_ID')
-        window.location.href='carpet-payment.html';
+        window.location.href='payment.html';
         
        </script>";
     }else{

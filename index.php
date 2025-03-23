@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,12 +41,13 @@
               <li><a href="#team">Team</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+              <li><a href="logout.php" class="logout-btn">Logout</a></li>
             </ul>
           </nav>
           <div style = "display: flex" class="profile" id="profile">
             <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
             <span id="username">
-            <?php
+            <?php 
                if (session_status() == PHP_SESSION_NONE) {
                  session_start();
                }
@@ -53,9 +55,9 @@
               if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
                 $_SESSION['username'] = $_COOKIE['username']; // Restore session from cookie
               }
-               $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
-               if($username === null){
-                 echo "Guest";
+               $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+               if($username === "Guest"){
+                 echo "<h2>Guest</h2>";
                }
                else{
                  echo "<h2>$username</h2>";
@@ -558,5 +560,15 @@
 
     <script src="aos.js"></script>
     <script src="script.js"></script>
+    <script>
+      function requireLogin(event) {
+    var username = "<?php echo $username; ?>";
+    if (username === "Guest") {
+        event.preventDefault();
+        alert("You must be logged in to purchase a service.");
+        window.location.href = "login.html";
+    }
+}
+    </script>
   </body>
 </html>
