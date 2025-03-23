@@ -40,24 +40,30 @@
               <li><a href="#team">Team</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
-              <div class="profile" id="profile">
-                <i class="fas fa-user"></i>
-                <span id="username"><?php
-                  session_start();
-                  $username = $_SESSION['username'];
-                  if($username == null){
-                    echo "Guest";
-                  }
-                  else{
-                    echo htmlspecialchars($username);
-                  }
-                 ?></span>
-              </div>
             </ul>
-            
           </nav>
+          <div class="profile" id="profile">
+            <i class="fas fa-user"></i>
+            <span id="username">
+            <?php
+               if (session_status() == PHP_SESSION_NONE) {
+                 session_start();
+               }
+               // Check if session is not set but cookies are available
+              if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+                $_SESSION['username'] = $_COOKIE['username']; // Restore session from cookie
+              }
+               $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
+               if($username === null){
+                 echo "Guest";
+               }
+               else{
+                 echo htmlspecialchars($username);
+               }
+            ?>
+            </span>
+          </div>
         </div>
-        
       </header>
 
       <!----- home ----->
