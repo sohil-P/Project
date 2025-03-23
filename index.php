@@ -42,8 +42,8 @@
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
             </ul>
           </nav>
-          <div class="profile" id="profile">
-            <i class="fas fa-user"></i>
+          <div style = "display: flex" class="profile" id="profile">
+            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
             <span id="username">
             <?php
                if (session_status() == PHP_SESSION_NONE) {
@@ -58,7 +58,7 @@
                  echo "Guest";
                }
                else{
-                 echo htmlspecialchars($username);
+                 echo "<h2>$username</h2>";
                }
             ?>
             </span>
