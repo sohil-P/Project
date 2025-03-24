@@ -1,22 +1,36 @@
 <?php
 session_start();
 include_once 'config.php';
-if (!isset($_SESSION['reset_email'])) {
-    header("Location: ./login.html");
-    exit();
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $new_password = $_POST['password'];
-    $email = $_SESSION['reset_email'];
+    $email = $_POST['email'];
+    $reset_token = $_POST['reset_token'];
+    $new_password = password_hash($_POST['new_password'], PASSWORD_BCRYPT);
 
-    // Update password in the database
-    $update = $conn->prepare("UPDATE   `user_registration` SET Password = ? WHERE 'Email' = ?");
-    $update->bind_param("ss", $new_password, $email);
-    $update->execute();
+    // Check if the token is valid
+    $check_token = $conn->prepare("SELECT * FROM `user_registration` WHERE Email = ? AND Reset_Token = ? AND Token_Expire > NOW()");
+    $check_token->bind_param("ss", $email, $reset_token);
+    $check_token->execute();
+    $result = $check_token->get_result();
 
-    unset($_SESSION['reset_email']);
-    echo "<script>alert('Password updated successfully!'); window.location.href='login.html';</script>";
+    if ($result->num_rows > 0) {
+        // Update the password
+        $update_password = $conn->prepare("UPDATE `user_registration` SET Password = ?, Reset_Token = NULL, Token_Expire = NULL WHERE Email = ?");
+        $update_password->bind_param("ss", $new_password, $email);
+        $update_password->execute();
+
+        echo "
+        <script>
+        alert('Your password has been reset successfully.');
+        window.location.href='login.html';
+        </script>";
+    } else {
+        echo "
+        <script>
+        alert('Invalid or expired token.');
+        window.location.href='forgot_paasowrd.php';
+        </script>";
+    }
 }
 ?> 
 
@@ -30,13 +44,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <h2>Reset Password</h2>
-        <form action="./reset_password.php" method="post">
-            <div class="input-box">
-                <input type="password" name="password" placeholder="New Password" required>
-            </div>
-            <button type="submit" class="btn">Reset Password</button>
-        </form>
+        <div class="form-box" id="reset-box">
+            <h2>Reset Password</h2>
+            <form action="reset_password.php" method="post">
+                <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
+                <input type="hidden" name="reset_token" value="<?php echo $_GET['reset_token']; ?>">
+                <div class="input-box">
+                    <input type="password" name="new_password" required placeholder="Enter your new password">
+                    <label>New Password</label>
+                </div>
+                <button type="submit" class="btn">Reset Password</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
@@ -131,4 +150,4 @@ h2 {
 
 
 
-  
+

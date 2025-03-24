@@ -2,7 +2,7 @@
 $host='localhost';
 $username='root';
 $password=null;
-$database='cleaning services';
+$database='cleaning_services';
 
 
 
