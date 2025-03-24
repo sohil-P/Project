@@ -157,7 +157,6 @@ navigation();
 // Call displayUserProfile on page load
 // document.addEventListener('DOMContentLoaded', displayUserProfile);
 
-
 ///check login status
 // function loginUser(username) {
 //   // Replace this with your actual login logic
