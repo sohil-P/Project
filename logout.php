@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: index.php");
         exit;
     } else {
-        echo "Error: Username does not match the logged-in user.";
+        echo "<script>alert('Invalid username! Please try again.'); window.location.href ='./index.php';</script>";
+        exit;
     }
 }

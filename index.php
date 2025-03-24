@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,6 +50,7 @@
                   <label for="username">Enter Username to Logout:</label> <br>
                   <input type="text" name="username" id="username" required>
                   <button type="submit">Submit</button>
+                  
                 </form>
             </div>
             <div style="display: flex" class="profile" id="profile">
@@ -459,7 +459,7 @@
               >
                 <i class="fas fa-envelope"></i>
                 <h3>Email us</h3>
-                <p>brightwavecleaners@gmail.com</p>
+                <p>brightwavecleaners17@gmail.com</p>
               </div>
             </div>
             <div
