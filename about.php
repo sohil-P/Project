@@ -40,8 +40,40 @@
               <li><a href="index.php#team">Team</a></li>
               <li><a href="index.php#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+              <li><button style = "color: red;" class = "logout-btn" id = "logoutBtn" onclick="showLogoutForm()">Logout &#8594;</button></li>
             </ul>
           </nav>
+          <!-- Logout Form -->
+          <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
+          <div id="logoutForm">
+              <form action="logout.php" method="POST">
+                <label for="username">Enter Username to Logout:</label> <br>
+                <input type="text" name="username" id="username" required>
+                <button type="submit">Submit</button>
+              </form>
+          </div>
+          <div style = "display: flex" class="profile" id="profile">
+            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
+            <span id="username">
+            <?php 
+               if (session_status() == PHP_SESSION_NONE) {
+                 session_start();
+               }
+              if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+                $_SESSION['username'] = $_COOKIE['username'];
+              }
+               $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+               if($username === "Guest"){
+                 echo "<h2>Guest</h2>";
+                 echo "<script>document.querySelector('.logout-btn').style.display = 'none';</script>";
+               }
+               else{
+                 echo "<h2>$username</h2>";
+                 echo "<script>document.querySelector('.login-btn').style.display = 'none';</script>";
+               }
+            ?>
+            </span>
+          </div>
         </div>
       </header>
 
@@ -57,7 +89,7 @@
               experienced team of cleaners delivers top-quality cleaning
               solutions tailored to your needs.
             </p>
-            <button onclick="redirectToPage()">Visit now</button>
+            <button onclick="redirectPage()">Visit now</button>
           </div>
           <div class="image-section">
             <img
@@ -388,7 +420,7 @@
                 bring sparkle and shine your space!
               </p>
               <button
-                onclick="redirectToPage()"
+                onclick="redirectPage()"
                 data-aos="fade-up"
                 data-aos-duration="800"
               >
@@ -460,14 +492,18 @@
       </div>
     </div>
 
-    <script src="aos.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-      function redirectToPage() {
-        window.location.href = "carpet-service.html";
+      function redirectPage(){
+        window.location.href = "index.php#services";
+      }
+      
+      // Function to show logout form
+      function showLogoutForm() {
+        document.getElementById("logoutForm").style.display = "block";
+        document.getElementById("logoutForm-overlay").style.display = "block";
       }
     </script>
+    <script src="aos.js"></script>
+    <script src="script.js"></script>    
   </body>
 </html>

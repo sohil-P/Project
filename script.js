@@ -120,9 +120,6 @@ const navigation = () => {
 };
 navigation();
 
-
-
-
 // // check login user
 // function isLoggedIn() {
 //   // Replace this with your actual login check logic
@@ -141,10 +138,6 @@ navigation();
 //       .catch(error => console.error('Error fetching user data:', error));
 //   }
 // }
-
-
-
-
 
 // function requireLogin(event) {
 //   if (!isLoggedIn()) {

@@ -39,8 +39,41 @@
               <li><a href="index.php#team">Team</a></li>
               <li><a href="index.php#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+              <li><button style = "color: red;" class = "logout-btn" id = "logoutBtn" onclick="showLogoutForm()">Logout &#8594;</button></li>
             </ul>
           </nav>
+          <!-- Logout Form -->
+          <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
+            <div id="logoutForm">
+                <form action="logout.php" method="POST">
+                  <label for="username">Enter Username to Logout:</label> <br>
+                  <input type="text" name="username" id="username" required>
+                  <button type="submit">Submit</button>
+                </form>
+          </div>
+
+          <div style = "display: flex" class="profile" id="profile">
+            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
+            <span id="username">
+            <?php 
+               if (session_status() == PHP_SESSION_NONE) {
+                 session_start();
+               }
+              if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+                $_SESSION['username'] = $_COOKIE['username'];
+              }
+               $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+               if($username === "Guest"){
+                 echo "<h2>Guest</h2>";
+                 echo "<script>document.querySelector('.logout-btn').style.display = 'none';</script>";
+               }
+               else{
+                 echo "<h2>$username</h2>";
+                 echo "<script>document.querySelector('.login-btn').style.display = 'none';</script>";
+               }
+            ?>
+            </span>
+          </div>
         </div>
       </header>
 
@@ -48,27 +81,33 @@
         <div class="container">
           <div class="grid member-grid">
             <div class="member-home-img">
-              <img src="images/santosh-profile.webp" loading="lazy" alt="" />
+              <img
+                src="images/hiten_profile_photo.webp"
+                loading="lazy"
+                alt=""
+              />
             </div>
             <div class="member-home-text">
               <h1>Welcome to BrightWave Cleaners</h1>
               <p>
-                Hi, I'm Santosh, I'm here to help you with your laundry needs.
-                I'm available 24/7 to help you with your laundry needs. Feel
-                free to contact me anytime.
+                Hi, I'm Hiten, I'm here to help you with your laundry needs. I'm
+                available 24/7 to help you with your laundry needs. Feel free to
+                contact me anytime.
               </p>
               <div class="social-media-links">
                 <h4>Social Media :</h4>
                 <div class="media-links">
-                  <a href="https://www.instagram.com/santosh.__05/">
+                  <a href="https://www.instagram.com/hiten_prajapati2912/">
                     <i class="fab fa-instagram"></i>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/prajapati-santosh-542119325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    href="https://www.linkedin.com/in/hiten-prajapati-734961302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
-                  <a href="https://www.facebook.com/share/1QEz2uAeW9/">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100084457056450"
+                  >
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </div>
@@ -132,6 +171,13 @@
       </div>
     </div>
 
+    <script>
+      // Function to show logout form
+      function showLogoutForm() {
+        document.getElementById("logoutForm").style.display = "block";
+        document.getElementById("logoutForm-overlay").style.display = "block";
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
