@@ -50,7 +50,6 @@
                   <label for="username">Enter Username to Logout:</label> <br>
                   <input type="text" name="username" id="username" required>
                   <button type="submit">Submit</button>
-                  
                 </form>
             </div>
             <div style="display: flex" class="profile" id="profile">
