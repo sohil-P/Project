@@ -14,7 +14,7 @@
     session_start();
     if($result){
         
-        header("Location:./index.html");
+        header("Location:./index.php");
     } else {
         echo "<script>
         alert(Error: " . $sql . ")

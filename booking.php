@@ -26,20 +26,27 @@ if(isset($_POST['submit'])){
      $stmt = $conn->prepare($query);
      $stmt->bind_param("sssssssiiii", $name, $email, $phone, $address, $city, $state, $pincode, $S_ID, $BS_ID,$SS_ID,$PS_ID);
      $result= $stmt->execute();
-    $B_ID = $stmt->insert_id; // Get the last inserted ID
+   
     $stmt->close();
+    $SName = $_POST['service'];
+    $workers=$_POST['workers'];
 
  
+    $messege = "Thank you for Purchase the Service.
+                Your Purchase service are:$SName and 
+                Workers are:$workers";
+    $subject = "Booking Confirmation";
+    $headers = "From: brightwavecleaners17@gmail.com";
 
-    if($result){
+    if($result && mail($email, $subject, $messege, $headers)){
         echo "<script>
         alert(' Booking successful. Please proceed to payment');  
        </script>";
-       header("refresh: 1; url=./payment.php");
+       header("refresh: 0; url=./payment.php");
     }else{
         echo "<script>
         alert('Not Book the service')
-        
+        window.location.href='./
        </script>";
     }
 }

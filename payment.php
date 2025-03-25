@@ -24,11 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['payment'])) {
         <script>
         document.addEventListener('DOMContentLoaded', function() {
             showPopup();
-
+          
         });
-      
+       header('refresh:0; url=./index.php');
         </script>";
-        header("refresh: 1; url=./index.php");
+        
     } else {
         echo "<script>alert('Error processing payment. Please try again.');</script>";
     }
@@ -246,7 +246,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['payment'])) {
       }
 
       function openIndex() {
-        window.location.href = "index.php";
+       window.location.href = "index.html";
       }
 
       

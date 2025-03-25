@@ -7,7 +7,7 @@
     $Username = $_POST['UName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    // $password = md5($password);
+    //  $password = md5($password);
     $checkEmail= "SELECT * FROM user_registration WHERE Email='$email'";
     $result= $conn->query($checkEmail);
     if($result->num_rows>0){
@@ -21,7 +21,7 @@
       if($conn->query($insertQuery)==TRUE){
         header("location:./login.html");
       } else {
-      //header("location:./login.html");
+     
         echo "<script>
         alert('Error:".$conn->error."');
         window.location.href='login.html'
@@ -35,8 +35,8 @@
   if(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
-    // $password=md5($password);
-    //$sql="INSERT INTO userlogin(Email,Password) SELECT Email,Password FROM registration"; 
+    //  $password=md5($password);
+     
     $sql="SELECT * FROM user_registration  WHERE Email='$email'  AND Password='$password'";
     $result=$conn->query($sql);
     if($result->num_rows>0 ){
@@ -44,15 +44,9 @@
       $conn->query($sql);
       //session_start();
       $row=$result->fetch_assoc();
-      //$_SESSION['email']=$row['email'];
+      
       $_SESSION['user_id']=$row['U_ID'];
       $_SESSION['username']=$row['Username'];
-      // echo "<script>
-      //  localStorage.setItem(userLoggedIn, 'true');
-      //  localStorage.setItem('username', '{$row['Username']}');
-      // window.location.href='./index.php';
-      // </script>";
-      
       // Create a cookie for persistent login (valid for 30 days)
       setcookie('username', $row['Username'], time() + (30 * 24 * 60 * 60), "/"); // 30 days
       header("location:./index.php");

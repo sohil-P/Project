@@ -18,11 +18,11 @@ if(isset($_POST['submit'])){
      $BS_ID = $sql1->insert_id; // Get the last inserted ID
      $sql1->close();
      include('./booking.php');
-    if($result1){
-            echo "recored Inserted";
-    }
-    else{
-        echo "error";
-    }
+    // if($result1){
+    //         echo "recored Inserted";
+    // }
+    // else{
+    //     echo "error";
+    // }
 }
 ?>

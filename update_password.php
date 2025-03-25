@@ -5,6 +5,7 @@ include './config.php'; // Include your database connection file
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_password = $_POST['new_password'];
+    // $new_password=md5($new_password);
     $email = $_SESSION['email'];
 
     // Update password in the database
