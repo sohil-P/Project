@@ -66,6 +66,7 @@ form .field {
   outline: none;
   padding: 0 15px;
   border: 1px solid #cacaca;
+  background: var(--bg-white);
 }
 .field input::placeholder {
   color: #232323;

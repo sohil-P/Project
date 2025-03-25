@@ -1,10 +1,6 @@
-
  <?php
-
-include('./config.php');
- 
-
-if(isset($_POST['submit'])){
+    include('./config.php');
+    if(isset($_POST['submit'])){
 
     $SName=$_POST['service'];
     $SFrequency=$_POST['frequency'];

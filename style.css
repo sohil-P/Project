@@ -226,8 +226,7 @@ button {
   border: none;
   border: 1px solid var(--main-color);
   border-radius: 30px;
-  background-color: transparent;
-  color: var(--text-x-dark-gray);
+  background: var(--bg-color);
   font-size: var(--fs-md);
   font-weight: 600;
   cursor: pointer;
@@ -235,7 +234,7 @@ button {
   transition: 0.3s;
 }
 .nav ul li button:hover {
-  background: var(--main-color);
+  background: var(--body-bg-color);
 }
 #logoutForm {
   display: none;
