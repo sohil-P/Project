@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Add styles for the logout form and overlay */
+        .logoutForm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+
+        #logoutForm {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1001;
+        }
+
+        #logoutForm label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #logoutForm input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #logoutForm button {
+            background-color: #007bff;
+            color: #b02828;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #logoutForm button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="logoutForm-overlay" id="logoutForm-overlay">
+        <div id="logoutForm" >
+            <form action="logout.php" method="POST" onsubmit="return validateLogout()">
+              <label for="username">Enter Username to Logout:</label> <br>
+              <input type="text" name="username" id="username" required>
+              <button type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>

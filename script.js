@@ -120,9 +120,6 @@ const navigation = () => {
 };
 navigation();
 
-
-
-
 // // check login user
 // function isLoggedIn() {
 //   // Replace this with your actual login check logic
@@ -142,10 +139,6 @@ navigation();
 //   }
 // }
 
-
-
-
-
 // function requireLogin(event) {
 //   if (!isLoggedIn()) {
 //     event.preventDefault();
@@ -164,3 +157,20 @@ navigation();
 //   localStorage.setItem('userName', username);
 //   window.location.href = 'index.html';
 // }
+
+function showLogout() {
+  document.getElementById("logoutForm").style.display = "block";
+  document.getElementById("logoutForm-overlay").style.display = "block";
+}
+showLogout();
+
+function validateLogout() {
+  var username = document.getElementById("profile-username").innerText.trim();
+  var enteredUsername = document.getElementById("logoutUsername").value;
+  if (username !== enteredUsername) {
+      alert("Username does not match. Please enter the correct username.");
+      return false;
+  }
+  return true;
+}
+validateLogout();

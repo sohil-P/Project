@@ -40,9 +40,18 @@
               <li><a href="#team">Team</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
-              <li><a href="logout.php" class="logout-btn">Logout</a></li>
+              <li><button style = "color: red;" class = "logout-btn" id = "logoutBtn" onclick="showLogoutForm()">Logout &#8594;</button></li>
             </ul>
           </nav>
+          <!-- Logout Form -->
+          <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
+          <div id="logoutForm">
+              <form action="logout.php" method="POST">
+                <label for="username">Enter Username to Logout:</label> <br>
+                <input type="text" name="username" id="username" required>
+                <button type="submit">Submit</button>
+              </form>
+          </div>
           <div style = "display: flex" class="profile" id="profile">
             <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
             <span id="username">
@@ -50,16 +59,17 @@
                if (session_status() == PHP_SESSION_NONE) {
                  session_start();
                }
-               // Check if session is not set but cookies are available
               if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
-                $_SESSION['username'] = $_COOKIE['username']; // Restore session from cookie
+                $_SESSION['username'] = $_COOKIE['username'];
               }
                $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
                if($username === "Guest"){
                  echo "<h2>Guest</h2>";
+                 echo "<script>document.querySelector('.logout-btn').style.display = 'none';</script>";
                }
                else{
                  echo "<h2>$username</h2>";
+                 echo "<script>document.querySelector('.login-btn').style.display = 'none';</script>";
                }
             ?>
             </span>
@@ -92,7 +102,7 @@
                 data-aos-duration="1000"
                 data-aos-delay="300"
               >
-                <a href="about.html" class="btn"> Know more</a>
+                <a href="about.php" class="btn"> Know more</a>
               </div>
             </div>
             <div class="home-img">
@@ -365,7 +375,7 @@
           <div class="grid">
             <div class="team-item" data-aos="fade-up" data-aos-duration="1000">
               <div class="img-box">
-                <a href="member1.html"><img src="images/hiten_profile_photo.webp" loading="lazy" alt="img" /></a>
+                <a href="member1.php"><img src="images/hiten_profile_photo.webp" loading="lazy" alt="img" /></a>
               </div>
               <div class="detail">
                 <h3>Hiten Prajapati</h3>
@@ -380,7 +390,7 @@
               data-aos-delay="100"
             >
               <div class="img-box">
-                <a href="member2.html"><img src="images/santosh-profile.webp" loading="lazy" alt="img" /></a>
+                <a href="member2.php"><img src="images/santosh-profile.webp" loading="lazy" alt="img" /></a>
               </div>
               <div class="detail">
                 <h3>Santosh Prajapati</h3>
@@ -395,7 +405,7 @@
               data-aos-delay="200"
             >
               <div class="img-box">
-                <a href="member3.html"><img src="images/sohil-profile.webp" loading="lazy" alt="img" /></a>
+                <a href="member3.php"><img src="images/sohil-profile.webp" loading="lazy" alt="img" /></a>
               </div>
               <div class="detail">
                 <h3>Sohil Prajapati</h3>
@@ -449,7 +459,7 @@
               >
                 <i class="fas fa-envelope"></i>
                 <h3>Email us</h3>
-                <p>brightwavecleaners@gmail.com</p>
+                <p>brightwavecleaners17@gmail.com</p>
               </div>
             </div>
             <div
@@ -557,17 +567,24 @@
       </div>
     </div>
 
+
+    <script>
+      // Function to show logout form
+      function showLogoutForm() {
+        document.getElementById("logoutForm").style.display = "block";
+        document.getElementById("logoutForm-overlay").style.display = "block";
+      }
+
+      function requireLogin(event) {
+        var username = "<?php echo $username; ?>";
+        if (username === "Guest") {
+          event.preventDefault();
+          alert("You must be logged in to purchase a service.");
+          window.location.href = "login.html";
+        }
+      }
+    </script>
     <script src="aos.js"></script>
     <script src="script.js"></script>
-    <script>
-      function requireLogin(event) {
-    var username = "<?php echo $username; ?>";
-    if (username === "Guest") {
-        event.preventDefault();
-        alert("You must be logged in to purchase a service.");
-        window.location.href = "login.html";
-    }
-}
-    </script>
   </body>
 </html>
