@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2025 at 01:34 PM
+-- Generation Time: Mar 25, 2025 at 09:58 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cleaning services`
+-- Database: `cleaning_services`
 --
 
 -- --------------------------------------------------------
@@ -119,6 +119,7 @@ CREATE TABLE `booking_details` (
   `City` varchar(10) NOT NULL,
   `State` varchar(10) NOT NULL,
   `Pincode` int(6) NOT NULL,
+  `created_at` datetime NOT NULL,
   `S_ID` int(5) DEFAULT NULL,
   `BS_ID` int(5) DEFAULT NULL,
   `SS_ID` int(5) DEFAULT NULL,
@@ -129,80 +130,9 @@ CREATE TABLE `booking_details` (
 -- Dumping data for table `booking_details`
 --
 
-INSERT INTO `booking_details` (`B_ID`, `Name`, `Email`, `MobileNo`, `Address`, `City`, `State`, `Pincode`, `S_ID`, `BS_ID`, `SS_ID`, `PS_ID`) VALUES
-(49, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 1, 0, NULL, NULL),
-(50, 'Happy Prajapati', 'happyprajapati585@gmail.com', 6358789425, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 11, 0, NULL, NULL),
-(52, 'Sohil Prajapati', 'ps8929382@gmail.com', 6378894050, 'Bhalusana', 'Satlasana', 'Gujarat ', 384330, 1, 0, NULL, NULL),
-(53, 'Meet Prajapati', 'Mit123@gmail.com', 9999999999, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 1, 0, NULL, NULL),
-(54, 'kjnk', 'sp8983@gmail.com', 552222222, 'xcvfdbf', 'xc cxb v', 'fxbdfbf', 380009, 0, 0, NULL, NULL),
-(55, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'm m ', 'm mm m mnb', 265954, 7, 0, NULL, NULL),
-(56, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'm dggrdgfr', 'm mm m mnb', 265954, 7, 0, NULL, NULL),
-(57, 'sddff', 'sp8983@gmail.com', 7896541230, 'xdd', 'njnnnjj', 'jjjjj', 6666, 20, 0, NULL, NULL),
-(58, 'Deep Suthar', 'deep2213@gmail.com', 8899987086, 'kkfvbdknk', 'knkc vnkvc', 'cvkfcn', 885855, 21, 0, NULL, NULL),
-(59, 'Sohil Prajapati', 'sp8983@gmail.com', 6378894050, 'Moti Bhalu', 'ahmedabad', 'fxbdfbf', 857466, NULL, 19, NULL, NULL),
-(60, 'preet', 'preet122@gmail.com', 123654789, 'xdcdc', 'mj', 'mm', 0, 23, NULL, NULL, NULL),
-(61, 'Happy Prajapati', 'happyprajapati585@gmail.com', 6352588175, 'Visnagar', 'Visnagar', 'Gujarat ', 384310, NULL, NULL, NULL, NULL),
-(62, 'dfbd', 'vimal123@gmail.com', 6378894050, 'mjnm', 'm m ', 'mmn', 896574, NULL, 20, NULL, NULL),
-(63, 'cfdkj', 'deep2213@gmail.com', 6546616564, 'c fvbfd', 'cvbfdgf', 'xvfbgf', 565665, 24, NULL, NULL, NULL),
-(64, 'cjvdbvfjb', 'happyprajapati585@gmail.com', 8745963210, 'cxbfd', 'cbcvb', 'xcvcfvb', 587469, NULL, NULL, NULL, NULL),
-(65, 'dgrgrthth', 'happyprajapati585@gmail.com', 8745963210, 'dvvcvc', 'cbcvb', 'xcvcfvb', 587469, NULL, NULL, NULL, 3),
-(66, 'bfffbfgbgf', 'sp8983@gmail.com', 6352588175, 'Bhalusana', 'ahmedabad', 'xcvcfvb', 6666, NULL, NULL, 7, NULL),
-(67, 'Happy Prajapati', 'hitenprajapati6659@gmail.com', 6352588175, 'Visnagar', 'Visnagar', 'Gujarat ', 384310, NULL, NULL, NULL, 4),
-(68, 'Mit Prajapati', 'Mit123@gmail.com', 8899987086, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, NULL, NULL, NULL, 5),
-(69, 'Happy Prajapati', 'happyprajapati585@gmail.com', 6352588175, 'Sheshpur', 'Satlasana', 'Gujrat', 384330, NULL, NULL, NULL, 6),
-(70, 'Santosh Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 25, NULL, NULL, NULL),
-(71, 'Santosh Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 26, NULL, NULL, NULL),
-(72, 'Santosh Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 27, NULL, NULL, NULL),
-(73, 'Santosh Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 28, NULL, NULL, NULL),
-(74, 'Sohil Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 29, NULL, NULL, NULL),
-(75, 'Sohil Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 30, NULL, NULL, NULL),
-(76, 'Sohil Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 31, NULL, NULL, NULL),
-(77, 'Sohil Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 32, NULL, NULL, NULL),
-(78, 'Sohil Prajapati', 'ps8929382@gmail.com', 2750147786, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 33, NULL, NULL, NULL),
-(79, 'Deep Suthar', 'deep2213@gmail.com', 6378894050, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 34, NULL, NULL, NULL),
-(80, 'Deep Suthar', 'deep2213@gmail.com', 6378894050, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 36, NULL, NULL, NULL),
-(81, 'Deep Suthar', 'deep2213@gmail.com', 6378894050, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 37, NULL, NULL, NULL),
-(82, 'Ahesan Ali', 'Ahesan@gmail.com', 1236547890, 'vadnagar', 'vadnagar', 'Gujarat ', 384310, NULL, NULL, 8, NULL),
-(83, 'Ahesan Ali', 'Ahesan@gmail.com', 1236547890, 'vadnagar', 'vadnagar', 'Gujarat ', 384310, NULL, NULL, 9, NULL),
-(84, 'Ahesan Ali', 'Ahesan@gmail.com', 1236547890, 'vadnagar', 'vadnagar', 'Gujarat ', 384310, NULL, NULL, 10, NULL),
-(85, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 38, NULL, NULL, NULL),
-(86, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 39, NULL, NULL, NULL),
-(87, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 40, NULL, NULL, NULL),
-(88, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 41, NULL, NULL, NULL),
-(89, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 21, NULL, NULL),
-(90, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 22, NULL, NULL),
-(91, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 23, NULL, NULL),
-(92, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 24, NULL, NULL),
-(93, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 25, NULL, NULL),
-(94, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 26, NULL, NULL),
-(95, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 27, NULL, NULL),
-(96, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 28, NULL, NULL),
-(97, 'Santosh Prajapati', 'sp8983@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 587469, NULL, 29, NULL, NULL),
-(98, 'Santosh Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, NULL, 11, NULL),
-(99, 'Santosh Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, NULL, 12, NULL),
-(100, 'Santosh Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, NULL, 13, NULL),
-(101, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 42, NULL, NULL, NULL),
-(102, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 43, NULL, NULL, NULL),
-(103, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 6378894050, 'Vajapur', 'Visnagar', 'Gujrat', 384330, 44, NULL, NULL, NULL),
-(104, 'Santosh Prajapati', 'happyprajapati585@gmail.com', 6358789425, 'Vajapur', 'vadnagar', '55', 33, 45, NULL, NULL, NULL),
-(105, 'kamo', 'kamo@gmail.com', 9999999999, '1616', 'jhvhv vhgv', 'hvhvvgvhvh', 55555, 46, NULL, NULL, NULL),
-(106, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 47, NULL, NULL, NULL),
-(107, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, 48, NULL, NULL, NULL),
-(108, 'Deep Suthar', 'deep2213@gmail.com', 2750147786, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 49, NULL, NULL, NULL),
-(109, 'Santosh Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Vajapur', 'Satlasana', 'Gujarat ', 384330, 50, NULL, NULL, NULL),
-(110, 'kamo', 'kamo@gmail.com', 8780874064, 'bavada', 'ahmedabad', 'Gujarat ', 384330, NULL, 30, NULL, NULL),
-(111, 'kamo', 'kamo@gmail.com', 8780874064, 'bavada', 'ahmedabad', 'Gujarat ', 384330, NULL, 31, NULL, NULL),
-(112, 'kamo', 'kamo@gmail.com', 8780874064, 'bavada', 'ahmedabad', 'Gujarat ', 384330, NULL, 32, NULL, NULL),
-(113, 'kamo', 'kamo@gmail.com', 8780874064, 'bavada', 'ahmedabad', 'Gujarat ', 384330, NULL, 33, NULL, NULL),
-(114, 'kamo', 'kamo@gmail.com', 8780874064, 'bavada', 'ahmedabad', 'Gujarat ', 384330, NULL, 34, NULL, NULL),
-(115, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 35, NULL, NULL),
-(116, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 36, NULL, NULL),
-(117, 'kamo', 'sp8983@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 37, NULL, NULL),
-(118, 'kamo', 'sp8983@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 38, NULL, NULL),
-(119, 'kamo', 'sp8983@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 39, NULL, NULL),
-(120, 'kamo', 'sp8983@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 40, NULL, NULL),
-(121, 'kamo', 'sp8983@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, NULL, 41, NULL, NULL),
-(122, 'het raval', 'het@gmail.com', 5555555555, '55xcvfd', 'xvjndfkj', 'xcvcjn cvk', 88888, NULL, NULL, 14, NULL);
+INSERT INTO `booking_details` (`B_ID`, `Name`, `Email`, `MobileNo`, `Address`, `City`, `State`, `Pincode`, `created_at`, `S_ID`, `BS_ID`, `SS_ID`, `PS_ID`) VALUES
+(131, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, '2025-03-25 11:33:55', NULL, NULL, NULL, 17),
+(132, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 8780874064, 'Mumanvas', 'Satlasana', 'Gujarat ', 384330, '2025-03-25 14:15:19', NULL, NULL, 15, NULL);
 
 -- --------------------------------------------------------
 
@@ -235,7 +165,7 @@ INSERT INTO `feedback-details` (`F_ID`, `Name`, `Address`, `MobileNo`, `Message`
 
 CREATE TABLE `payment` (
   `P_ID` int(5) NOT NULL,
-  `B_ID` int(5) NOT NULL,
+  `B_ID` int(5) DEFAULT NULL,
   `Payment Method` varchar(20) NOT NULL,
   `Date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -245,43 +175,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`P_ID`, `B_ID`, `Payment Method`, `Date`) VALUES
-(1, 0, 'Cash on Delivery', '2025-03-04 21:01:54.000000'),
-(2, 0, 'Cash on Delivery', '2025-03-04 21:03:25.000000'),
-(3, 0, 'Cash on Delivery', '2025-03-04 21:04:25.000000'),
-(4, 0, 'cash on delivery', '2025-03-05 22:18:49.000000'),
-(5, 0, 'Cash on Delivery', '2025-03-04 22:37:52.000000'),
-(6, 0, 'Cash on Delivery', '2025-03-04 22:39:08.000000'),
-(7, 0, 'Cash on Delivery    ', '2025-03-04 22:39:34.000000'),
-(8, 0, 'Cash on Delivery    ', '2025-03-04 22:58:27.000000'),
-(9, 0, 'Cash on Delivery    ', '2025-03-04 22:58:43.000000'),
-(10, 0, 'Cash on Delivery', '2025-03-05 12:59:56.000000'),
-(11, 0, 'Cash on Delivery', '2025-03-05 13:01:15.000000'),
-(12, 0, 'Cash on Delivery', '2025-03-05 13:04:59.000000'),
-(13, 0, 'Cash on Delivery', '2025-03-05 13:07:50.000000'),
-(14, 0, 'Cash on Delivery', '2025-03-05 13:11:19.000000'),
-(15, 0, 'Cash on Delivery', '2025-03-05 13:12:49.000000'),
-(16, 0, 'Cash on Delivery', '2025-03-05 13:13:01.000000'),
-(17, 0, 'Cash on Delivery', '2025-03-05 13:28:11.000000'),
-(18, 0, 'Cash on Delivery', '2025-03-05 13:31:08.000000'),
-(19, 0, 'Cash on Delivery', '2025-03-05 13:33:33.000000'),
-(20, 0, 'Cash on Delivery', '2025-03-05 13:36:05.000000'),
-(21, 0, 'Cash on Delivery', '2025-03-05 13:37:05.000000'),
-(22, 0, 'Cash on Delivery', '2025-03-05 13:37:41.000000'),
-(23, 0, 'Cash on Delivery', '2025-03-05 13:38:12.000000'),
-(24, 0, 'Cash on Delivery', '2025-03-05 13:38:25.000000'),
-(25, 0, 'Cash on Delivery', '2025-03-06 21:36:53.000000'),
-(26, 0, 'Cash on Delivery', '2025-03-06 21:38:07.000000'),
-(27, 0, 'Cash on Delivery', '2025-03-06 21:40:49.000000'),
-(28, 0, 'Cash on Delivery', '2025-03-06 21:45:08.000000'),
-(29, 0, 'Cash on Delivery', '2025-03-06 21:46:42.000000'),
-(30, 0, 'Cash on Delivery', '2025-03-06 22:17:24.000000'),
-(31, 0, 'Cash on Delivery', '2025-03-06 22:20:03.000000'),
-(32, 0, 'Cash on Delivery', '2025-03-06 22:55:56.000000'),
-(33, 0, 'Cash on Delivery', '2025-03-06 22:56:20.000000'),
-(34, 0, 'Cash on Delivery', '2025-03-07 10:18:38.000000'),
-(35, 0, 'Cash on Delivery', '2025-03-07 10:23:58.000000'),
-(36, 0, 'Cash on Delivery', '2025-03-07 10:24:23.000000'),
-(37, 0, 'Cash on Delivery', '2025-03-07 10:25:56.000000');
+(52, 131, 'Cash on Delivery', '2025-03-25 11:41:41.000000'),
+(53, 132, 'Cash on Delivery', '2025-03-25 14:15:28.000000');
 
 -- --------------------------------------------------------
 
@@ -310,7 +205,18 @@ INSERT INTO `premium_service` (`PS_ID`, `PSName`, `Frequency`, `Date`, `Time`, `
 (3, 'Furniture Cleaning,Kitchen Cleaning,Car Cleaning,Bathroom Cleaning,Window Cleaning,Carpet Cleaning,Office Cleaning,Medical Cleaning', 'three_monthly', '2025-03-06', '21:27:00.000000', '$4900', 'combine', 14),
 (4, 'All services', 'three_monthly', '2025-02-22', '22:54:00.000000', '$3500', 'male', 10),
 (5, 'Furniture Cleaning,Kitchen Cleaning,Car Cleaning,Window Cleaning,Carpet Cleaning', 'monthly', '2025-03-01', '22:18:00.000000', '$600', 'female', 5),
-(6, 'Furniture Cleaning,Carpet Cleaning,Office Cleaning,Resturant Cleaning,Event Cleaning', 'three_monthly', '2025-03-01', '08:41:00.000000', '$2450', 'female', 7);
+(6, 'Furniture Cleaning,Carpet Cleaning,Office Cleaning,Resturant Cleaning,Event Cleaning', 'three_monthly', '2025-03-01', '08:41:00.000000', '$2450', 'female', 7),
+(7, 'All services', 'monthly', '2025-03-29', '13:09:00.000000', '$1200', 'female', 10),
+(8, 'All services', 'monthly', '2025-03-29', '13:09:00.000000', '$2080', 'female', 18),
+(9, 'Kitchen Cleaning,Car Cleaning,Bathroom Cleaning,Window Cleaning,Carpet Cleaning', 'monthly', '2025-03-28', '11:26:00.000000', '$1200', 'male', 10),
+(10, 'Kitchen Cleaning,Car Cleaning,Bathroom Cleaning,Window Cleaning,Carpet Cleaning', 'monthly', '2025-03-28', '11:26:00.000000', '$1200', 'male', 10),
+(11, 'Kitchen Cleaning,Car Cleaning,Bathroom Cleaning,Window Cleaning,Carpet Cleaning', 'monthly', '2025-03-28', '11:26:00.000000', '$1200', 'male', 10),
+(12, 'Kitchen Cleaning,Car Cleaning,Bathroom Cleaning,Window Cleaning,Carpet Cleaning', 'monthly', '2025-03-28', '11:26:00.000000', '$1200', 'male', 10),
+(13, 'Furniture Cleaning,Kitchen Cleaning,Car Cleaning,Carpet Cleaning', 'monthly', '2025-04-01', '00:07:00.000000', '$1200', 'female', 10),
+(14, 'All services', 'monthly', '2025-04-01', '00:07:00.000000', '$1320', 'female', 11),
+(15, 'Furniture Cleaning,Carpet Cleaning,Office Cleaning', 'monthly', '2025-04-01', '01:33:00.000000', '$1320', 'male', 11),
+(16, 'Furniture Cleaning,Carpet Cleaning,Office Cleaning', 'monthly', '2025-04-01', '01:33:00.000000', '$1320', 'male', 11),
+(17, 'Furniture Cleaning,Carpet Cleaning,Office Cleaning', 'monthly', '2025-04-01', '01:33:00.000000', '$1320', 'male', 11);
 
 -- --------------------------------------------------------
 
@@ -420,7 +326,8 @@ INSERT INTO `standard_service` (`SS_ID`, `SSName`, `Frequency`, `Date`, `Time`, 
 (11, 'Furniture,Kitchen,Car,Bathroom Cleaning', 'monthly', '0000-00-00', '14:10:00.000000', '$1080', 'male', 9),
 (12, 'Furniture,Kitchen,Car,Bathroom Cleaning', 'monthly', '0000-00-00', '14:10:00.000000', '$1080', 'male', 9),
 (13, 'Furniture,Kitchen,Car,Bathroom Cleaning', 'monthly', '0000-00-00', '14:10:00.000000', '$1200', 'male', 10),
-(14, 'Furniture,Kitchen,Car,Bathroom Cleaning', 'monthly', '2025-03-14', '10:21:00.000000', '$720', 'male', 12);
+(14, 'Furniture,Kitchen,Car,Bathroom Cleaning', 'monthly', '2025-03-14', '10:21:00.000000', '$720', 'male', 12),
+(15, 'Furniture,Kitchen,Car,Bathroom Cleaning', 'two_monthly', '2025-03-26', '17:15:00.000000', '$960', 'male', 4);
 
 -- --------------------------------------------------------
 
@@ -442,7 +349,17 @@ CREATE TABLE `user_login` (
 INSERT INTO `user_login` (`SR.NO`, `Email`, `Password`, `Date`) VALUES
 (1, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-01-21 17:07:17'),
 (2, 'happyprajapati585@gmail.com', 'happy@585', '2025-02-14 09:04:36'),
-(3, 'sp8983@gmail.com', 'sohil#1234', '2025-02-14 09:18:13');
+(3, 'sp8983@gmail.com', 'sohil#1234', '2025-02-14 09:18:13'),
+(4, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-24 12:50:54'),
+(5, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-24 13:00:51'),
+(6, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-24 13:32:01'),
+(7, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-24 13:38:39'),
+(8, 'hitenwork585@gmail.com', '$2y$10$JmF', '2025-03-24 21:07:19'),
+(9, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-25 10:16:09'),
+(10, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-25 10:25:39'),
+(11, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-25 13:27:14'),
+(12, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-25 14:10:54'),
+(13, 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-03-25 14:14:34');
 
 -- --------------------------------------------------------
 
@@ -464,8 +381,8 @@ CREATE TABLE `user_registration` (
 
 INSERT INTO `user_registration` (`U_ID`, `Username`, `Email`, `Password`, `Date`) VALUES
 (1, 'Hiten Prajapati', 'hitenprajapati6659@gmail.com', 'hiten@2912', '2025-01-21 17:05:41.000000'),
-(2, 'Happy Prajapati', 'happyprajapati585@gmail.com', 'happy@585', '2025-02-14 09:04:23.000000'),
-(3, 'Sohil Prajapati', 'sp8983@gmail.com', 'sohil#1234', '2025-02-14 09:18:02.000000');
+(2, 'Happy Prajapati', 'hitenwork585@gmail.com', '291204', '2025-02-14 09:04:23.000000'),
+(3, 'Sohil Prajapati', 'sohilwork1343@gmail.com', '123456', '2025-02-14 09:18:02.000000');
 
 --
 -- Indexes for dumped tables
@@ -556,7 +473,7 @@ ALTER TABLE `basic_service`
 -- AUTO_INCREMENT for table `booking_details`
 --
 ALTER TABLE `booking_details`
-  MODIFY `B_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `B_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `feedback-details`
@@ -568,13 +485,13 @@ ALTER TABLE `feedback-details`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `P_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `P_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `premium_service`
 --
 ALTER TABLE `premium_service`
-  MODIFY `PS_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `PS_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `service_category`
@@ -586,13 +503,13 @@ ALTER TABLE `service_category`
 -- AUTO_INCREMENT for table `standard_service`
 --
 ALTER TABLE `standard_service`
-  MODIFY `SS_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `SS_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `SR.NO` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `SR.NO` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user_registration`

@@ -12,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ss", $new_password, $email);
 
     if ($stmt->execute()) {
-        echo "Password updated successfully.";
+        echo "<script>alert('Password Update Successfully')
+        window.location.href='login.html';</script>";
         // Clear session variables
         session_unset();
         session_destroy();

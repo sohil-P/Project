@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
     $state= $_POST['state'];
     $pincode = $_POST['zip'];
-     $query = "INSERT INTO `booking_details`(`Name`,`Email`,`MobileNo`,`Address`,`City`,`State`,`Pincode`,`S_ID`,`BS_ID`,`SS_ID`,`PS_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
+     $query = "INSERT INTO `booking_details`(`Name`,`Email`,`MobileNo`,`Address`,`City`,`State`,`Pincode`,`created_at`,`S_ID`,`BS_ID`,`SS_ID`,`PS_ID`) VALUES (?, ?, ?, ?, ?, ?, ?,now(), ?,?,?,?)";
      $stmt = $conn->prepare($query);
      $stmt->bind_param("sssssssiiii", $name, $email, $phone, $address, $city, $state, $pincode, $S_ID, $BS_ID,$SS_ID,$PS_ID);
      $result= $stmt->execute();
@@ -33,10 +33,9 @@ if(isset($_POST['submit'])){
 
     if($result){
         echo "<script>
-        alert(' Booking successful. Your Booking ID is :$B_ID')
-        window.location.href='payment.html';
-        
+        alert(' Booking successful. Please proceed to payment');  
        </script>";
+       header("refresh: 1; url=./payment.php");
     }else{
         echo "<script>
         alert('Not Book the service')

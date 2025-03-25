@@ -26,7 +26,6 @@ foreach($result as $row){
     <td>".$row['Address']."</td>
     <td>".$row['MobileNo']."</td>
     <td>".$row['Message']."</td>
-  
 
     <td><form method='post'>
      <button name='delete' value=".$row['F_ID'].">DELETE</button>
@@ -38,11 +37,13 @@ echo "</table>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
-    $deleteQury = $conn->prepare("DELETE  FROM feedback-details WHERE F_ID='$id' ");
-    
+    $deleteQuery = $conn->prepare("DELETE  FROM `feedback-details` WHERE F_ID=? ");
+    $deleteQuery->bindParam(1,$id);
     if($deleteQuery->execute()){
-        echo "Record Deleted..";
-          header("Refresh:1");
+        echo "<script>alert('Record Deleted..');</script>";
+                echo "<script>setTimeout(function(){ window.location.reload(); }, 1000);</script>";
+
+        //   header("Refresh:1");
     }
     else{
         echo "operation failed!";

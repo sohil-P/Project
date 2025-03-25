@@ -2,7 +2,13 @@
 
 
 include("connection.php");
-$selectQuery = $conn->prepare("SELECT * FROM booking_details ");
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+}
+else{
+    $id=0;
+}
+$selectQuery = $conn->prepare("SELECT * FROM booking_details WHERE B_ID = '$id'");
 $selectQuery->execute();
 $result=$selectQuery->fetchAll();
 
