@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['payment'])) {
             showPopup();
           
         });
-       header('refresh:0; url=./index.php');
         </script>";
+        header('refresh:0;url=./index.php');
         
     } else {
         echo "<script>alert('Error processing payment. Please try again.');</script>";

@@ -17,7 +17,7 @@
         header("Location:./index.php");
     } else {
         echo "<script>
-        alert(Error: " . $sql . ")
+        alert('Error: " . $conn->error . "');
         </script>";
     }
    
