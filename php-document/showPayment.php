@@ -15,7 +15,7 @@ foreach($result as $row){
    
     echo "<tr>.
     <td>".$row['P_ID']."</td>
-    <td>".$row['B_ID']."</td>
+    <td><a href='#' onclick=\"fetchDetails('showBooking.php?id=".$row['B_ID']."')\">".$row['B_ID']."</a></td>
     <td>".$row['Payment Method']."</td>
     <td>".$row['Date']."</td>
   
