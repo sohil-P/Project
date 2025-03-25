@@ -1,18 +1,8 @@
 <?php
-// // Database configuration
-// $host = 'localhost'; // or your database host
-// $dbname = 'cleaning services'; // your database name
-// $username = 'root'; // your database username
-// $password = ''; // your database password
 
-// // Create a connection
-// $conn = new mysqli($host, $username, $password, $dbname);
 
-// // Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
 include("connection.php");
+
 $selectQuery = $conn->prepare("SELECT * FROM booking_details");
 $selectQuery->execute();
 $result=$selectQuery->fetchAll();
@@ -26,6 +16,7 @@ echo "<th>Address</th>";
 echo "<th>City</th>";
 echo "<th>State</th>";
 echo "<th>Pincode</th>";
+echo "<th>created_at</th>";
 echo "<th>S_ID</th>";
 echo "<th>BS_ID</th>";
 echo "<th>SS_ID</th>";
@@ -42,6 +33,7 @@ foreach($result as $row){
     <td>".$row['City']."</td>
     <td>".$row['State']."</td>
     <td>".$row['Pincode']."</td>
+    <td>".$row['created_at']."</td>
     <td><a href='#' onclick=\"fetchDetails('showServices.php?id=".$row['S_ID']."')\">".$row['S_ID']."</a></td>
     <td><a href='#' onclick=\"fetchDetails('basic_service.php?id=".$row['BS_ID']."')\">".$row['BS_ID']."</a></td>
     <td><a href='#' onclick=\"fetchDetails('standard_service.php?id=".$row['SS_ID']."')\">".$row['SS_ID']."</a></td>
@@ -53,12 +45,11 @@ foreach($result as $row){
     </tr>";
 }
 echo "</table>";
-echo "<div id='detailsContainer'></div>";
+echo "<div id='detailsContainer' ></div>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
     $deleteQuery = $conn->prepare("DELETE  FROM booking_details WHERE B_ID='$id' ");
-    
     if($deleteQuery->execute()){
         echo "Record Deleted..";
           header("Refresh:1");

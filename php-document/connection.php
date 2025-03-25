@@ -14,7 +14,7 @@ $database='cleaning_services';
 //     echo "Connect";
 // }
 
-$conn= new PDO("mysql:host=$host;dbname=cleaning services",$username,$password);
+$conn= new PDO("mysql:host=$host;dbname=cleaning_services",$username,$password);
 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 

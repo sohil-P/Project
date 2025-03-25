@@ -18,11 +18,11 @@ if(isset($_POST['submit'])){
     
     include('./booking.php');
     // $result1 =$conn->query($sql2);
-    if($result1){
-            echo "recored Inserted";
-    }
-    else{
-        echo "error";
-    }
+    // if($result1){
+    //         echo "recored Inserted";
+    // }
+    // else{
+    //     echo "error";
+    // }
 }
 ?>

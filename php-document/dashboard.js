@@ -6,11 +6,13 @@ document.getElementById("showUser").addEventListener("click", function () {
   fetchData("showUser.php");
 });
 
-document
-  .getElementById("showBookService") .addEventListener("click", function () {
+document.getElementById("showBookService") .addEventListener("click", function () {
     fetchData("admindashboard.php");
   });
 
+ document.getElementById("showPayment").addEventListener("click", function () {
+  fetchData("showPayment.php");
+});
 document.getElementById("showService").addEventListener("click", function () {
   fetchData("showFeedback.php");
 });
@@ -44,3 +46,5 @@ function fetchDetails(url) {
     },
   });
 }
+
+
