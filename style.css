@@ -181,6 +181,7 @@ button {
 .header .logo a {
   font-size: 24px;
   font-weight: bold;
+  font-style: italic;
   line-height: 1.5;
   display: block;
   transform: scaleY(0.9);
@@ -188,6 +189,7 @@ button {
 }
 .header .logo span {
   font-size: 12px;
+  font-style: italic;
   text-transform: uppercase;
   display: block;
   font-weight: 400;
@@ -203,6 +205,7 @@ button {
   font-size: var(--fs-md);
   color: var(--text-x-dark-gray);
   font-weight: 600;
+  font-style: italic;
   display: block;
   padding: 10px 0;
   transition: color 0.3s ease;
@@ -222,7 +225,7 @@ button {
 .nav .login-btn:hover {
   background-color: var(--bg-color);
 }
-.nav ul li button {
+.nav ul .logoutLI a {
   border: none;
   border: 1px solid var(--main-color);
   border-radius: 30px;
@@ -233,9 +236,19 @@ button {
   padding: 10px 25px;
   transition: 0.3s;
 }
-.nav ul li button:hover {
+.nav ul .logoutLI a:hover {
   background: var(--body-bg-color);
 }
+.nav ul .logoutLI{
+  margin-left: 0;
+  margin-right: 20px;
+}
+.nav-and-profile{
+  display: flex;
+  align-items: center;
+}
+
+
 #logoutForm {
   display: none;
   background: var(--main-color);
@@ -296,7 +309,7 @@ button {
 /*------- home ---------*/
 
 .home {
-  padding: 100px 0 60px;
+  padding: 30px 0 60px;
 }
 .grid {
   display: grid;
@@ -354,7 +367,8 @@ button {
   transform: translate(-50%, -50%);
 }
 .home-img img {
-  max-width: 270px;
+  max-width: 350px;
+  height: 100vh;
   display: block;
   margin: auto;
 }
@@ -824,11 +838,11 @@ textarea.input-control {
     left: 50%;
   }
   .home .circle {
-    height: 280px;
-    width: 280px;
+    height: 350px;
+    width: 350px;
   }
   .home-img img {
-    max-width: 235px;
+    max-width: 325px;
   }
 }
 
@@ -837,39 +851,6 @@ textarea.input-control {
     --fs-4x1: 42px;
     --fs-3x1: 31px;
     --fs-2x1: 24px;
-  }
-  .home-img img {
-    max-width: 250px;
-  }
-  .home .circle-wrap {
-    right: 50%;
-  }
-  .home-img .circle {
-    height: 290px;
-    width: 290px;
-  }
-  .services-item .img-box {
-    height: 120px;
-    width: 120px;
-  }
-  .pricing-item {
-    grid-column: span 6;
-  }
-  .pricing-header .price {
-    height: 130px;
-    width: 130px;
-  }
-  .team-item {
-    grid-column: span 6;
-  }
-}
-
-@media (max-width: 767px) {
-  :root {
-    --fs-4x1: 35px;
-    --fs-3x1: 26px;
-    --fs-2x1: 22px;
-    --fs-x1: 18px;
   }
   .nav-toggler {
     display: block;
@@ -943,8 +924,49 @@ textarea.input-control {
   .nav .login-btn {
     margin-top: 25px;
   }
-  
+  .nav ul .logoutLI a{
+    text-align: center;
+    margin-top: 20px;
+  }
+  .profile{
+    order: -1;
+    margin: 5px 0 0 0;
+  }
+  .home-img img {
+    max-width: 340px;
+    height: 80vh;
+  }
+  .home .circle-wrap {
+    right: 50%;
+  }
+  .home-img .circle {
+    height: 300px;
+    width: 300px;
+  }
+  .services-item .img-box {
+    height: 120px;
+    width: 120px;
+  }
+  .pricing-item {
+    grid-column: span 6;
+  }
+  .pricing-header .price {
+    height: 130px;
+    width: 130px;
+  }
+  .team-item {
+    grid-column: span 6;
+  }
+}
 
+@media (max-width: 767px) {
+  :root {
+    --fs-4x1: 35px;
+    --fs-3x1: 26px;
+    --fs-2x1: 22px;
+    --fs-x1: 18px;
+  }
+  
   .home-text,
   .home-img {
     grid-column: span 12;
@@ -985,18 +1007,27 @@ textarea.input-control {
 }
 
 @media (max-width: 575px) {
+  .home{
+    padding: 60px 0 0 0;
+  }
   .grid {
     gap: 30px 15px;
   }
   .home-img img {
-    max-width: 200px;
+    max-width: 300px;
+    height: 80vh;
   }
   .home .circle {
-    height: 250px;
-    width: 250px;
+    height: 320px;
+    width: 320px;
   }
   .home .circle-wrap {
     right: 50%;
+  }
+  #logoutForm {
+    padding: 10px;
+    width: 350px;
+    height: 250px;
   }
   .pricing-item {
     grid-column: span 12;

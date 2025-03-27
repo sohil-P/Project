@@ -23,6 +23,7 @@
           <div class="logo" data-aos="fade-down" data-aos-duration="1000">
             <a href="#">BrightWave <span>Cleaners</span></a>
           </div>
+          <div class="nav-and-profile">
           <button
             type="button"
             class="nav-toggler js-nav-toggler"
@@ -31,48 +32,50 @@
           >
             <span></span>
           </button>
-          <nav class="nav js-nav">
-            <ul data-aos="fade-down" data-aos-duration="1000">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
-              <li><button style = "color: red;" class = "logout-btn" id = "logoutBtn" onclick="showLogoutForm()">Logout &#8594;</button></li>
-            </ul>
-          </nav>
-          <!-- Logout Form -->
-          <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
-          <div id="logoutForm">
-              <form action="logout.php" method="POST">
-                <label for="username">Enter Username to Logout:</label> <br>
-                <input type="text" name="username" id="username" required>
-                <button type="submit">Submit</button>
-              </form>
-          </div>
-          <div style = "display: flex" class="profile" id="profile">
-            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
-            <span id="username">
-            <?php 
-               if (session_status() == PHP_SESSION_NONE) {
-                 session_start();
-               }
-              if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
-                $_SESSION['username'] = $_COOKIE['username'];
-              }
-               $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
-               if($username === "Guest"){
-                 echo "<h2>Guest</h2>";
-                 echo "<script>document.querySelector('.logout-btn').style.display = 'none';</script>";
-               }
-               else{
-                 echo "<h2>$username</h2>";
-                 echo "<script>document.querySelector('.login-btn').style.display = 'none';</script>";
-               }
-            ?>
-            </span>
+          
+            <nav class="nav js-nav">
+              <ul data-aos="fade-down" data-aos-duration="1000">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
+                <li class="logoutLI"><a style = "color: red;" class = "logout-btn" id = "logoutBtn">Logout &#8594;</a></li>
+              </ul>
+            </nav>
+            <!-- Logout Form -->
+            <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
+            <div id="logoutForm">
+                <form action="logout.php" method="POST">
+                  <label for="username">Enter Username to Logout:</label> <br>
+                  <input type="text" name="username" id="username" required>
+                  <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div style = "display: flex" class="profile" id="profile">
+              <i style = "margin: 3px 8px 0 0" class="fas fa-user"></i>
+              <span id="username">
+              <?php 
+                 if (session_status() == PHP_SESSION_NONE) {
+                   session_start();
+                 }
+                if (!isset($_SESSION['username']) && isset($_COOKIE['username'])) {
+                  $_SESSION['username'] = $_COOKIE['username'];
+                }
+                 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
+                 if($username === "Guest"){
+                   echo '<h3 style="font-style: italic;">Guest</h3>';
+                   echo "<script>document.querySelector('.logout-btn').style.display = 'none';</script>";
+                 }
+                 else{
+                   echo "<h3 style=\"font-style: italic;\">$username</h3>";
+                   echo "<script>document.querySelector('.login-btn').style.display = 'none';</script>";
+                 }
+              ?>
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -114,7 +117,7 @@
                 <div class="circle"></div>
               </div>
               <img
-                src="images\home-img.webp"
+                src="images\homeImage3.webp"
                 loading="lazy"
                 alt="img"
                 data-aos="fade-left"
@@ -569,11 +572,11 @@
 
 
     <script>
-      // Function to show logout form
-      function showLogoutForm() {
+      const logoutBtn = document.getElementById("logoutBtn");
+      logoutBtn.addEventListener("click", () => {
         document.getElementById("logoutForm").style.display = "block";
         document.getElementById("logoutForm-overlay").style.display = "block";
-      }
+      });
 
       function requireLogin(event) {
         var username = "<?php echo $username; ?>";

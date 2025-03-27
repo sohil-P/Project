@@ -158,12 +158,6 @@ navigation();
 //   window.location.href = 'index.html';
 // }
 
-function showLogout() {
-  document.getElementById("logoutForm").style.display = "block";
-  document.getElementById("logoutForm-overlay").style.display = "block";
-}
-showLogout();
-
 function validateLogout() {
   var username = document.getElementById("profile-username").innerText.trim();
   var enteredUsername = document.getElementById("logoutUsername").value;

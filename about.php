@@ -23,6 +23,7 @@
           <div class="logo" data-aos="fade-down" data-aos-duration="1000">
             <a href="index.php">BrightWave <span>Cleaners</span></a>
           </div>
+          <div class="nav-and-profile">
           <button
             type="button"
             class="nav-toggler js-nav-toggler"
@@ -40,8 +41,8 @@
               <li><a href="index.php#team">Team</a></li>
               <li><a href="index.php#contact">Contact</a></li>
               <li><a href="login.html" class="login-btn">Login &#8594;</a></li>
-              <li><button style = "color: red;" class = "logout-btn" id = "logoutBtn" onclick="showLogoutForm()">Logout &#8594;</button></li>
-            </ul>
+              <li class="logoutLI"><a style = "color: red;" class = "logout-btn" id = "logoutBtn">Logout &#8594;</a></li>
+              </ul>
           </nav>
           <!-- Logout Form -->
           <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
@@ -53,7 +54,7 @@
               </form>
           </div>
           <div style = "display: flex" class="profile" id="profile">
-            <i style = "margin: 10px 10px 0 0" class="fas fa-user"></i>
+            <i style = "margin: 3px 10px 0 0" class="fas fa-user"></i>
             <span id="username">
             <?php 
                if (session_status() == PHP_SESSION_NONE) {
@@ -64,15 +65,16 @@
               }
                $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Guest";
                if($username === "Guest"){
-                 echo "<h2>Guest</h2>";
+                 echo '<h3 style="font-style: italic;">Guest</h3>';
                  echo "<script>document.querySelector('.logout-btn').style.display = 'none';</script>";
                }
                else{
-                 echo "<h2>$username</h2>";
+                 echo "<h3 style=\"font-style: italic;\">$username</h3>";
                  echo "<script>document.querySelector('.login-btn').style.display = 'none';</script>";
                }
             ?>
             </span>
+          </div>
           </div>
         </div>
       </header>
@@ -497,11 +499,11 @@
         window.location.href = "index.php#services";
       }
       
-      // Function to show logout form
-      function showLogoutForm() {
+      const logoutBtn = document.getElementById("logoutBtn");
+      logoutBtn.addEventListener("click", () => {
         document.getElementById("logoutForm").style.display = "block";
         document.getElementById("logoutForm-overlay").style.display = "block";
-      }
+      });
     </script>
     <script src="aos.js"></script>
     <script src="script.js"></script>    
