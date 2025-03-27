@@ -27,13 +27,15 @@ foreach($result as $row){
     </tr>";
 }
 echo "</table>";
+echo "<div id='detailsContainer' ></div>";
 
 if(isset($_POST['delete'])){
     $id=$_POST['delete'];
-    $deleteQury = $conn->prepare("DELETE  FROM payment WHERE P_ID='$id' ");
+    $deleteQuery = $conn->prepare("DELETE  FROM payment WHERE P_ID='$id' ");
     
     if($deleteQuery->execute()){
-        echo "Record Deleted..";
+        echo "<script>alert('Are you want to Delete Record...')
+        window.location.href='showPayment.php'</script>";
           header("Refresh:1");
     }
     else{
