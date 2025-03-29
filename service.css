@@ -151,6 +151,7 @@
   border-radius: 30px;
   outline: none;
   background: var(--bg-color);
+  color: var(--text-x-dark-gray);
 }
 
 .address-detail {
@@ -174,6 +175,7 @@
   border-radius: 30px;
   outline: none;
   background: var(--bg-color);
+  color: var(--text-x-dark-gray);
 }
 
 .service-detail {
@@ -199,12 +201,13 @@
   width: 100%;
   outline: none;
   background: var(--bg-color);
+  color: var(--text-x-dark-gray);
 }
 .service-type select {
   padding: 10px;
   margin: 0 0 17px 0;
   font-size: var(--fs-md);
-  color: var(--text-dark-gray);
+  color: var(--text-x-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
   width: 100%;
@@ -215,7 +218,7 @@
   padding: 10px;
   margin: 0 0 17px 0;
   font-size: var(--fs-md);
-  color: var(--text-dark-gray);
+  color: var(--text-x-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
   width: 100%;
@@ -241,7 +244,7 @@
   padding: 10px;
   margin: 0 0 17px 0;
   font-size: var(--fs-md);
-  color: var(--text-dark-gray);
+  color: var(--text-x-dark-gray);
   border: 1px solid var(--border-color);
   border-radius: 30px;
   width: 100%;
