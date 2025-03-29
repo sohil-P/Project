@@ -309,7 +309,7 @@ button {
 /*------- home ---------*/
 
 .home {
-  padding: 30px 0 60px;
+  padding: 60px 0 60px;
 }
 .grid {
   display: grid;
@@ -368,7 +368,7 @@ button {
 }
 .home-img img {
   max-width: 350px;
-  height: 100vh;
+  height: 90vh;
   display: block;
   margin: auto;
 }
@@ -930,7 +930,6 @@ textarea.input-control {
   }
   .profile{
     order: -1;
-    margin: 5px 0 0 0;
   }
   .home-img img {
     max-width: 340px;
@@ -939,9 +938,9 @@ textarea.input-control {
   .home .circle-wrap {
     right: 50%;
   }
-  .home-img .circle {
-    height: 300px;
-    width: 300px;
+  .home .circle {
+    height: 320px;
+    width: 320px;
   }
   .services-item .img-box {
     height: 120px;
@@ -974,6 +973,10 @@ textarea.input-control {
   .home-img {
     order: -1;
     margin-bottom: 20px;
+  }
+  .home .circle {
+    height: 320px;
+    width: 320px;
   }
 
   .about-img,

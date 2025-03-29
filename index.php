@@ -286,8 +286,7 @@
                   <li><i class="fas fa-check"></i>carpet cleaning</li>
                   <li><i class="fas fa-check"></i>With 6 workers (Default)</li>
                   <li>
-                    <i class="fas fa-check"></i>Also Customize workers (Your
-                    choice)
+                    <i class="fas fa-check"></i>Customize workers
                   </li>
                   <li><i class="fas fa-times"></i>furniture cleaning</li>
                   <li><i class="fas fa-times"></i>car cleaning</li>
@@ -318,8 +317,7 @@
                   <li><i class="fas fa-check"></i>car cleaning</li>
                   <li><i class="fas fa-check"></i>With 12 workers (Default)</li>
                   <li>
-                    <i class="fas fa-check"></i>Also Customize workers (Your
-                    choice)
+                    <i class="fas fa-check"></i>Customize workers
                   </li>
                   <li><i class="fas fa-times"></i>office cleaning</li>
                   <li><i class="fas fa-times"></i>other services</li>
@@ -350,8 +348,7 @@
                   <li><i class="fas fa-check"></i>other services</li>
                   <li><i class="fas fa-check"></i>With 18 workers (Default)</li>
                   <li>
-                    <i class="fas fa-check"></i>Also Customize workers (Your
-                    choice)
+                    <i class="fas fa-check"></i>Customize workers
                   </li>
                 </ul>
               </div>

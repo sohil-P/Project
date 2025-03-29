@@ -221,6 +221,40 @@
               <input type="checkbox" id="checkbox10" onchange="updateValue()" />
               <h3>event cleaning</h3>
             </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img
+                    src="images/Post-Construction.webp"
+                    loading="lazy"
+                    alt="post-construction"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox11" onchange="updateValue()" />
+              <h3>Post-Construction cleaning</h3>
+            </div>
+            <div
+              class="services-item ps-items"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
+              <div class="img-box">
+                <a href="#"
+                  ><img
+                    src="images/industrial-cleaning.webp"
+                    loading="lazy"
+                    alt="industrial"
+                /></a>
+              </div>
+              <input type="checkbox" id="checkbox12" onchange="updateValue()" />
+              <h3>Industrial cleaning</h3>
+            </div>
 
             <div class="service-home-text">
               <form action="./premium-service.php" method="POST">
@@ -630,6 +664,8 @@
         var checkbox8 = document.getElementById("checkbox8");
         var checkbox9 = document.getElementById("checkbox9");
         var checkbox10 = document.getElementById("checkbox10");
+        var checkbox11 = document.getElementById("checkbox11");
+        var checkbox12 = document.getElementById("checkbox12");
         var textbox = document.getElementById("myTextbox");
 
         var selectedOptions = [];
@@ -663,6 +699,12 @@
         }
         if (checkbox10.checked) {
           selectedOptions.push("Event Cleaning");
+        }
+        if (checkbox11.checked) {
+          selectedOptions.push("Post-Construction Cleaning");
+        }
+        if (checkbox12.checked) {
+          selectedOptions.push("Industrial Cleaning");
         }
         textbox.value = selectedOptions.join(",");
       }
