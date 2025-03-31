@@ -309,7 +309,7 @@ button {
 /*------- home ---------*/
 
 .home {
-  padding: 60px 0 60px;
+  padding: 100px 0 60px;
 }
 .grid {
   display: grid;
@@ -367,8 +367,7 @@ button {
   transform: translate(-50%, -50%);
 }
 .home-img img {
-  max-width: 350px;
-  height: 90vh;
+  max-width: 270px;
   display: block;
   margin: auto;
 }
@@ -842,7 +841,7 @@ textarea.input-control {
     width: 350px;
   }
   .home-img img {
-    max-width: 325px;
+    max-width: 270px;
   }
 }
 
@@ -932,8 +931,7 @@ textarea.input-control {
     order: -1;
   }
   .home-img img {
-    max-width: 340px;
-    height: 80vh;
+    max-width: 250px;
   }
   .home .circle-wrap {
     right: 50%;
@@ -1017,12 +1015,11 @@ textarea.input-control {
     gap: 30px 15px;
   }
   .home-img img {
-    max-width: 300px;
-    height: 80vh;
+    max-width: 240px;
   }
   .home .circle {
-    height: 320px;
-    width: 320px;
+    height: 300px;
+    width: 300px;
   }
   .home .circle-wrap {
     right: 50%;

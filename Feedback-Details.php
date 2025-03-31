@@ -1,7 +1,5 @@
 <?php
- 
    include("./config.php");
-  
    if(isset($_POST['Send'])){
     $name =$_POST['Name'];
     $address =$_POST['Address'];
@@ -13,13 +11,11 @@
     $result = $conn->query($sql);
     session_start();
     if($result){
-        
         header("Location:./index.php");
     } else {
         echo "<script>
         alert('Error: " . $conn->error . "');
         </script>";
     }
-   
    }
 ?>

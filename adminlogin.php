@@ -19,14 +19,10 @@ if(isset($_POST['login'])){
         exit();
     }
     else{
-           
         echo "<script>
         alert('Not found,Incorrect Email or Password')
         window.location.href='adminlogin.html'
         </script>";
-     
     }
  }
-
-
 ?>
