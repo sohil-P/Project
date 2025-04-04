@@ -204,27 +204,27 @@
         <div class="container">
           <div class="grid">
             <div class="about-main-images">
-              <div class="about-image-and-text pink">
+              <div class="about-image-and-text pink" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Home Cleaning</h3>
                 <img src="images/about-image1.webp" loading="lazy" alt="" />
               </div>
-              <div class="about-image-and-text blue">
+              <div class="about-image-and-text blue" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="maid">Maid Service</h3>
                 <img src="images/about-image2.webp" loading="lazy" alt="" />
               </div>
-              <div class="about-image-and-text blue2">
+              <div class="about-image-and-text blue2" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="maid">Window Washing</h3>
                 <img src="images/about-image3.webp" loading="lazy" alt="" />
               </div>
-              <div class="about-image-and-text green">
+              <div class="about-image-and-text green" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="maid">Commercial Cleaning</h3>
                 <img src="images/about-image4.webp" loading="lazy" alt="" />
               </div>
-              <div class="about-image-and-text red">
+              <div class="about-image-and-text red" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="maid">Carpet Cleaning</h3>
                 <img src="images/about-image5.webp" loading="lazy" alt="" />
               </div>
-              <div class="about-image-and-text yellow">
+              <div class="about-image-and-text yellow" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="maid">
                   Move In/Move Out <br />
                   Cleaning
