@@ -18,21 +18,23 @@
     </div>
 
     <div class="page-wrapper">
+
+      <!----- header ----->
+
       <header class="header js-header">
         <div class="container">
           <div class="logo" data-aos="fade-down" data-aos-duration="1000">
             <a href="#">BrightWave <span>Cleaners</span></a>
           </div>
           <div class="nav-and-profile">
-          <button
-            type="button"
-            class="nav-toggler js-nav-toggler"
-            data-aos="fade-down"
-            data-aos-duration="1000"
-          >
-            <span></span>
-          </button>
-          
+            <button
+              type="button"
+              class="nav-toggler js-nav-toggler"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              <span></span>
+            </button>
             <nav class="nav js-nav">
               <ul data-aos="fade-down" data-aos-duration="1000">
                 <li><a href="#home">Home</a></li>
@@ -45,7 +47,7 @@
                 <li class="logoutLI"><a style = "color: red;" class = "logout-btn" id = "logoutBtn">Logout &#8594;</a></li>
               </ul>
             </nav>
-            <!-- Logout Form -->
+            <!----- Logout Form ----->
             <div class="logoutForm-overlay" id="logoutForm-overlay"></div>
             <div id="logoutForm">
                 <form action="logout.php" method="POST">

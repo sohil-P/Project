@@ -360,8 +360,8 @@ button {
   z-index: -1;
 }
 .home-img .circle {
-  height: 350px;
-  width: 350px;
+  height: 320px;
+  width: 320px;
   background-color: var(--main-color);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -837,8 +837,8 @@ textarea.input-control {
     left: 50%;
   }
   .home .circle {
-    height: 350px;
-    width: 350px;
+    height: 320px;
+    width: 320px;
   }
   .home-img img {
     max-width: 270px;
@@ -937,8 +937,8 @@ textarea.input-control {
     right: 50%;
   }
   .home .circle {
-    height: 320px;
-    width: 320px;
+    height: 300px;
+    width: 300px;
   }
   .services-item .img-box {
     height: 120px;
@@ -973,8 +973,8 @@ textarea.input-control {
     margin-bottom: 20px;
   }
   .home .circle {
-    height: 320px;
-    width: 320px;
+    height: 300px;
+    width: 300px;
   }
 
   .about-img,
